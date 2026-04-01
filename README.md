@@ -374,3 +374,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[pyccsds](https://github.com/pyccsds/pyccsds):** Python library for encoding and decoding CCSDS telemetry and telecommand frames including AOS, TM, and Space Packet layers
 - **[GNSS-SDR](https://gnss-sdr.org/):** Open-source GNSS software-defined receiver implementing GPS, GLONASS, Galileo, and BeiDou signal processing in GNU Radio
 - **[RTKLIB](http://www.rtklib.com/):** Open-source GNSS data analysis suite supporting precise positioning, signal logging, and post-processing — used for GPS spoofing research
+- **[Airspy R2](https://airspy.com/airspy-r2/):** High-performance SDR with 10 MHz instantaneous bandwidth — preferred for wideband satellite surveillance over RTL-SDR
+- **[USRP B200mini](https://www.ettus.com/all-products/usrp-b200mini/):** Ettus Research USB SDR covering 70 MHz – 6 GHz with full-duplex capability — used in professional satcom research
