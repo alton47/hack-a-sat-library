@@ -348,3 +348,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[PocketQube Shop Resources](https://www.pocketqubeshop.com/):** Hardware platform and documentation for PocketQube femtosatellites — the smallest deployable spacecraft class
 - **[Secure World Foundation Space Sustainability](https://swfound.org/):** Policy research on space debris, responsible behavior in orbit, and the intersection of cybersecurity with space sustainability
 - **[CSIS Aerospace Security Project](https://aerospace.csis.org/):** Center for Strategic and International Studies research on space threats, anti-satellite weapons, and defense posture
+- [NOAA CLASS Archive](https://www.avl.class.noaa.gov/): Comprehensive Level Archive and Storage System — freely accessible NOAA satellite data including GOES and POES imagery
+- [APT Satellite Decoder Guide](https://noaa-apt.mbernardi.com.ar/): Open-source NOAA APT image decoder with detailed signal format documentation
