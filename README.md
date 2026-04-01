@@ -232,3 +232,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [APT Satellite Decoder Guide](https://noaa-apt.mbernardi.com.ar/): Open-source NOAA APT image decoder with detailed signal format documentation
 - [AMSAT Satellite Status Page](https://www.amsat.org/status/): Live operational status of amateur radio satellites — essential for research on active targets
 - [AMSAT-NA](https://www.amsat.org/): North American amateur satellite organization with satellite design docs, TLE feeds, and transponder frequency lists
+- [IARU Satellite Frequency Coordination](https://www.iaru.org/reference/satellite-frequency-coordination/): International Amateur Radio Union coordination database for satellite frequency assignments
+- [UHF Satcom Band Plan](https://www.iaru-r1.org/): Detailed VHF/UHF satellite band allocations used by amateur and commercial LEO operators
