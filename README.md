@@ -382,3 +382,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[ECSS-Q-ST-80C](https://ecss.nl/standard/ecss-q-st-80c-software-product-assurance/):** Software product assurance standard — safety and security requirements for flight software development
 - **[MIT OCW 16.851 Satellite Engineering](https://ocw.mit.edu/courses/16-851-satellite-engineering-fall-2003/):** Full MIT lecture series on satellite design, orbital mechanics, and communication subsystems — free archived course
 - **[Coursera Spacecraft Dynamics and Control Specialization](https://www.coursera.org/specializations/spacecraft-dynamics-control):** University of Colorado Boulder four-course series on spacecraft attitude, orbital mechanics, and control
+- **[Aerospace Village at DEF CON](https://aerospacevillage.org/):** Dedicated aerospace security village within DEF CON featuring satellite, aviation, and drone security talks and CTF
+- **[SpaceCom Symposium](https://spacecomsymposium.com/):** Annual symposium focused on space communications technology and security policy
