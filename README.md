@@ -346,3 +346,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Jonathan's Space Pages](https://www.planet4589.org/):** Detailed orbital data, launch logs, and reentry records maintained independently since the early 1990s with exceptional historical depth
 - **[VIRGO Radio Telescope Software](https://github.com/0xCoto/VIRGO):** Python-based spectrometer for radio astronomy and satellite signal observation — runs on Raspberry Pi with RTL-SDR
 - **[PocketQube Shop Resources](https://www.pocketqubeshop.com/):** Hardware platform and documentation for PocketQube femtosatellites — the smallest deployable spacecraft class
+- **[Secure World Foundation Space Sustainability](https://swfound.org/):** Policy research on space debris, responsible behavior in orbit, and the intersection of cybersecurity with space sustainability
+- **[CSIS Aerospace Security Project](https://aerospace.csis.org/):** Center for Strategic and International Studies research on space threats, anti-satellite weapons, and defense posture
