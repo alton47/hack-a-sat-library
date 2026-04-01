@@ -272,3 +272,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[DSD (Digital Speech Decoder)](https://github.com/szechyjs/dsd):** Decodes digital voice protocols including P25, D-STAR, and DMR — occasionally encountered on satellite downlinks
 - **[AFL++ Satellite Firmware Fuzzing Guide](https://github.com/AFLplusplus/AFLplusplus):** Applying coverage-guided fuzzing to satellite firmware images using AFL++ with QEMU binary mode — documented in HAS 2020 challenges
 - **[Boofuzz CCSDS Protocol Fuzzer](https://github.com/jtpereyda/boofuzz):** Network protocol fuzzer extended for CCSDS telecommand frame fuzzing against satellite command handlers
+- **[Orbitron](http://www.stoff.pl/):** Windows satellite tracking application with rotor and radio CAT control — standard tool for automated satellite pass operations
+- **[GPredict](http://gpredict.oz9aec.net/):** Cross-platform real-time satellite tracking with Doppler correction output for radio CAT interfaces
