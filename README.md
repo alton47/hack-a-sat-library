@@ -380,3 +380,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Dish Feed Design for Ku-band](https://www.dishpointer.com/):** Resources for repurposing consumer satellite TV dishes for active satellite research and signal interception
 - **[ECSS-E-ST-70-01C](https://ecss.nl/standard/ecss-e-st-70-01c-space-engineering-onboard-data-handling/):** Space engineering onboard data handling standard — covers telemetry and telecommand packet formats for European space missions
 - **[ECSS-Q-ST-80C](https://ecss.nl/standard/ecss-q-st-80c-software-product-assurance/):** Software product assurance standard — safety and security requirements for flight software development
+- **[MIT OCW 16.851 Satellite Engineering](https://ocw.mit.edu/courses/16-851-satellite-engineering-fall-2003/):** Full MIT lecture series on satellite design, orbital mechanics, and communication subsystems — free archived course
+- **[Coursera Spacecraft Dynamics and Control Specialization](https://www.coursera.org/specializations/spacecraft-dynamics-control):** University of Colorado Boulder four-course series on spacecraft attitude, orbital mechanics, and control
