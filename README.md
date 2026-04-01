@@ -336,3 +336,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[NVIDIA Jetson Nano for Real-Time Signal Processing](https://developer.nvidia.com/embedded/jetson-nano-developer-kit):** GPU-accelerated signal processing platform used for real-time satellite protocol decoding at high sample rates
 - **[Orekit](https://www.orekit.org/):** Highly accurate Java space dynamics library covering orbit propagation, attitude modeling, maneuver planning, and coordinate frame transforms — used by ESA
 - **[beyond](https://github.com/galactics/beyond):** Lightweight Python space dynamics library with clean API for orbit propagation, frame conversions, and TLE parsing
+- **[space-packet-parser](https://github.com/medley56/space-packet-parser):** Pure Python CCSDS Space Packet Protocol parser supporting automatic packet definition loading from XTCE and CSV formats
+- **[pyccsds](https://github.com/pyccsds/pyccsds):** Python library for encoding and decoding CCSDS telemetry and telecommand frames including AOS, TM, and Space Packet layers
