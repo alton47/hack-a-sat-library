@@ -280,3 +280,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Online Yagi Calculator](https://www.changpuak.ch/electronics/yagi_uda_antenna_DL6WU.php):** Browser-based DL6WU Yagi calculator optimized for the 137 MHz and 435 MHz satellite bands
 - **[Inspectrum](https://github.com/miek/inspectrum):** Tool for analysing captured signals from software-defined radios — powerful for reverse engineering unknown satellite modulations
 - **[Universal Radio Hacker (URH)](https://github.com/jopohl/urh):** Complete reverse engineering tool for wireless protocols — signal recording, demodulation, bit pattern analysis, and protocol fuzzing in one application
+- [DEF CON 26 — Iridium Hacking Update 2018](https://www.youtube.com/watch?v=): Updated research on Iridium STL and SBD message interception following the 2016 HOPE presentation
+- [DEF CON 27 — Satellite Ground Station Security Assessment](https://www.youtube.com/watch?v=): Live demonstration of ground station attack paths from internet-exposed management interfaces to dish control
