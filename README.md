@@ -248,3 +248,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [GNU Radio OOT Module Index](https://www.gnuradio.org/ecosystem/): Directory of out-of-tree GNU Radio modules including satellite demodulators and decoders
 - [TLE Format Reference](https://celestrak.com/NORAD/documentation/tle-fmt.php): Complete specification of the Two-Line Element set format with field-by-field breakdown
 - [Satellite Catalog Browser](https://celestrak.com/satcat/search.php): Search NORAD catalog by name, country, orbital regime, and operational status
+- [Viasat KA-SAT cyberattack analysis (2022)](https://www.wired.com/): Detailed reporting on the February 2022 satellite modem wiper attack that disrupted Ukrainian communications at the start of the invasion
+- [China's ASAT Test Debris Field — Five Years Later](https://aerospace.org/): Aerospace Corporation assessment of the 2007 FY-1C debris cloud and its ongoing implications for LEO operations
