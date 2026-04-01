@@ -292,3 +292,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [Libre Space Foundation — SatNOGS Architecture Deep Dive](https://www.youtube.com/watch?v=): Full technical overview of the SatNOGS open ground station network architecture and scheduling system
 - [DEF CON 23 — All Your GPS Are Belong to Us](https://www.youtube.com/watch?v=): Comprehensive survey of GPS spoofing and jamming techniques applicable to drone navigation attacks
 - [NAVCERT 2019 — GNSS Spoofing Detection and Mitigation](https://www.youtube.com/watch?v=): Signal-level and application-level countermeasures for GPS/GNSS spoofing with live hardware demonstration
+- [TeleCommunication Systems SDR Tutorial Series](https://www.youtube.com/watch?v=): Multi-part series on BPSK, QPSK, and OQPSK demodulation as used in NOAA and weather satellite downlinks
+- [GOES-R Series Ground System Overview](https://www.youtube.com/watch?v=): NOAA technical briefing on the GOES-R ground system architecture including uplink and command security design
