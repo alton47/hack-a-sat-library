@@ -264,3 +264,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[HRPT Reader](https://www.geo-web.org.uk/hrpt.php):** Windows application for decoding and visualizing HRPT imagery from NOAA and MetOp satellites
 - **[gr-satellites](https://github.com/daniestevez/gr-satellites):** Extensive GNU Radio OOT module with demodulators and decoders for 100+ amateur, scientific, and weather satellites
 - **[satellite-js NPM](https://github.com/shashwatak/satellite-js):** Full-featured JavaScript satellite propagation library — ideal for building web-based tracking and visualization tools
+- **[Scapy CCSDS Layer](https://github.com/pyccsds/pyccsds):** Extends Scapy with CCSDS Space Packet Protocol, CLCW, and TC/TM frame dissectors for protocol fuzzing and analysis
+- **[ccsds_py](https://github.com/daniestevez/ccsds_py):** Pure Python CCSDS parser supporting Space Packet Protocol, AOS frames, and Reed-Solomon FEC decoding
