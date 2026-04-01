@@ -322,3 +322,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Cybrary SDR Fundamentals](https://www.cybrary.it/):** Beginner-friendly software-defined radio course with exercises applicable to satellite signal reception
 - **[MIT OCW 16.851 Satellite Engineering](https://ocw.mit.edu/courses/16-851-satellite-engineering-fall-2003/):** Full MIT lecture series on satellite design, orbital mechanics, and communication subsystems — free archived course
 - **[Coursera Spacecraft Dynamics and Control Specialization](https://www.coursera.org/specializations/spacecraft-dynamics-control):** University of Colorado Boulder four-course series on spacecraft attitude, orbital mechanics, and control
+- **[SANS FOR578 — Cyber Threat Intelligence](https://www.sans.org/courses/cyber-threat-intelligence/):** Threat intelligence methodology applicable to tracking nation-state actors targeting satellite infrastructure
+- **[Aerospace Village Learning Resources](https://aerospacevillage.org/learn/):** Free curated learning path for aviation and space cybersecurity from the DEF CON Aerospace Village team
