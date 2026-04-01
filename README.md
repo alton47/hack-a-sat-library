@@ -302,3 +302,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[NIST SP 800-53 Rev5 Applied to Space Systems](https://csrc.nist.gov/publications/sp800)** — mapping of the NIST security control framework to space mission security requirements
 - **[Software Defined Radio for Engineers](https://www.analog.com/en/education/education-library/software-defined-radio-for-engineers.html)** by Travis Collins et al. — free ADI textbook covering SDR fundamentals with ADALM-PLUTO exercises including satellite band reception
 - **[The Art and Science of Radio Direction Finding](https://www.amazon.com/)** — radio direction finding techniques applicable to locating rogue satellite uplink transmitters
+- **[Optimal Spacecraft Trajectories](https://www.amazon.com/)** by John E. Prussing — trajectory optimization relevant to understanding orbital mechanics used in CTF challenges
+- **[Spacecraft Operations](https://www.springer.com/)** edited by Thomas Uhlig et al. — practical guide to satellite operations including telemetry, tracking, and command (TT&C) systems
