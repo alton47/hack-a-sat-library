@@ -296,3 +296,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [GOES-R Series Ground System Overview](https://www.youtube.com/watch?v=): NOAA technical briefing on the GOES-R ground system architecture including uplink and command security design
 - [SEC-T 2010 — VSAT Hacking](https://www.youtube.com/watch?v=): Early presentation on vulnerabilities in VSAT systems including unencrypted DVB-RCS return channels
 - [Packet Hacking Village — Satellite Comms OPSEC Failures](https://www.youtube.com/watch?v=): Survey of plaintext satellite communication channels observed across maritime, aviation, and military-adjacent operators
+- **[An Introduction to Mission Design for Geostationary Satellites](https://www.springer.com/)** by J.J. Pocha — GEO mission design with focus on station-keeping and communications payload
+- **[Satellite Technology: Principles and Applications, 3rd Ed.](https://www.wiley.com/)** by Anil K. Maini — comprehensive reference covering satellite communication, navigation, and remote sensing systems
