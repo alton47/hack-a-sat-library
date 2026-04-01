@@ -326,3 +326,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Aerospace Village Learning Resources](https://aerospacevillage.org/learn/):** Free curated learning path for aviation and space cybersecurity from the DEF CON Aerospace Village team
 - **[Aerospace Village at DEF CON](https://aerospacevillage.org/):** Dedicated aerospace security village within DEF CON featuring satellite, aviation, and drone security talks and CTF
 - **[SpaceCom Symposium](https://spacecomsymposium.com/):** Annual symposium focused on space communications technology and security policy
+- **[MILCOM — Military Communications Conference](https://www.milcom.org/):** IEEE and AFCEA joint conference covering secure military satellite communications and anti-jamming technology
+- **[Advanced Maui Optical and Space Surveillance Technologies (AMOS)](https://amostech.com/):** Annual conference on space domain awareness including cyber threats to space assets
