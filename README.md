@@ -342,3 +342,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[RTKLIB](http://www.rtklib.com/):** Open-source GNSS data analysis suite supporting precise positioning, signal logging, and post-processing — used for GPS spoofing research
 - **[DeepSig RF Dataset Tools](https://www.deepsig.ai/datasets):** Machine learning datasets and tools for radio frequency signal classification — applicable to automated satellite signal identification
 - **[RadioML Modulation Recognition](https://github.com/radioML/dataset):** Benchmark dataset for deep learning-based automatic modulation classification of RF signals
+- **[Gunter's Space Page](https://space.skyrocket.de/):** The most comprehensive database of satellites, rockets, and launch vehicles — invaluable for identifying targets by name, frequency, or orbital regime
+- **[Jonathan's Space Pages](https://www.planet4589.org/):** Detailed orbital data, launch logs, and reentry records maintained independently since the early 1990s with exceptional historical depth
