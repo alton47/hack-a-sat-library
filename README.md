@@ -278,3 +278,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[SDR# (SDRSharp)](https://airspy.com/download/):** Most widely used Windows SDR application — extensive plugin ecosystem for satellite audio and data demodulation
 - **[4NEC2 Antenna Modeler](https://www.qsl.net/4nec2/):** Free NEC2-based antenna modeling software — used for designing Yagi and helical antennas optimized for VHF/UHF satellite bands
 - **[Online Yagi Calculator](https://www.changpuak.ch/electronics/yagi_uda_antenna_DL6WU.php):** Browser-based DL6WU Yagi calculator optimized for the 137 MHz and 435 MHz satellite bands
+- **[Inspectrum](https://github.com/miek/inspectrum):** Tool for analysing captured signals from software-defined radios — powerful for reverse engineering unknown satellite modulations
+- **[Universal Radio Hacker (URH)](https://github.com/jopohl/urh):** Complete reverse engineering tool for wireless protocols — signal recording, demodulation, bit pattern analysis, and protocol fuzzing in one application
