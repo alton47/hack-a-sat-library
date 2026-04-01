@@ -420,3 +420,25 @@ markdownlint README.md HASlibrary-contribute-instrxns.md
 # Check for trailing whitespace
 grep -rn ' $' README.md HASlibrary-contribute-instrxns.md
 ```
+
+---
+
+## Frequently Asked Questions
+
+**Q: Can I add a resource I created myself?**
+A: Yes, self-promotion is allowed if the resource is genuinely useful and you disclose your affiliation in the PR description.
+
+**Q: Can I add resources in languages other than English?**
+A: Yes. Non-English resources are welcome. Please note the language in the description.
+
+**Q: What if a resource fits multiple categories?**
+A: Add it to the most specific applicable category. Do not add the same resource to multiple sections.
+
+**Q: My link works but goes through a paywall — is that OK?**
+A: Paywalled resources are accepted if they are genuinely significant and a free preview or abstract is available. Note the paywall in your description.
+
+**Q: Can I suggest removing an outdated resource?**
+A: Yes. Open a PR that removes the resource and explains why it is no longer relevant or functional.
+
+**Q: How do I propose a new category?**
+A: Add your resource to the most relevant existing section and include `NEW CATEGORY: [Proposed Name]` in your PR description. The maintainers will evaluate and restructure if warranted.
