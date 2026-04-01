@@ -256,3 +256,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [The Rise of Commercial LEO Constellations and the Security Implications](https://spacenews.com/): Analysis of Starlink, OneWeb, and Kuiper security architecture decisions
 - [Ground Station Network Security — A Gap Analysis](https://aerospace.org/): The Aerospace Corporation white paper on attack paths through commercial ground station networks
 - [Teleport Security in VSAT Networks](https://via-satellite.com/): Via Satellite reporting on vulnerabilities in hub-and-spoke VSAT architectures used across government and enterprise
+- [Space Policy Directive-5: Cybersecurity Principles for Space Systems](https://www.whitehouse.gov/presidential-actions/memorandum-space-policy-directive-5-cybersecurity-principles-space-systems/): US executive-level directive establishing minimum cybersecurity requirements for commercial space operators
+- [CISA Space Systems Critical Infrastructure Guidance](https://www.cisa.gov/): CISA guidance on protecting space systems as critical national infrastructure
