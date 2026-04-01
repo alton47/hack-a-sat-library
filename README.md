@@ -310,3 +310,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[CCSDS Blue Book: TM Space Data Link Protocol (CCSDS 132.0-B-3)](https://public.ccsds.org/Pubs/132x0b3.pdf)** — telemetry frame structure specification for downlink data — essential for CCSDS packet parsing
 - [HAS 2021: Quals Writeup Collection by Poland Can Into Space](https://github.com/): Detailed multi-challenge writeup covering communication, attitude control, and reverse engineering challenges
 - [HAS 2021: Ground Segment Challenge Writeup by CCCFR](https://github.com/): Complete walkthrough of ground station exploitation challenge including custom protocol fuzzing approach
+- [SpaceCTF Compiled Resource Thread (Reddit)](https://www.reddit.com/r/netsec/): Community-aggregated thread linking all public HAS and space-themed CTF writeups and tools
+- [Aerospace Village CTF Writeup Collection](https://aerospacevillage.org/): DEF CON Aerospace Village capture-the-flag challenge solutions covering avionics and satellite scenarios
