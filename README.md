@@ -378,3 +378,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[USRP B200mini](https://www.ettus.com/all-products/usrp-b200mini/):** Ettus Research USB SDR covering 70 MHz – 6 GHz with full-duplex capability — used in professional satcom research
 - **[Quadrifilar Helicoidal Antenna (QFH)](https://www.satnogs.org/wiki/Antennas):** Circularly polarized omnidirectional antenna optimized for LEO satellite passes — DIY builds documented in SatNOGS wiki
 - **[Dish Feed Design for Ku-band](https://www.dishpointer.com/):** Resources for repurposing consumer satellite TV dishes for active satellite research and signal interception
+- **[ECSS-E-ST-70-01C](https://ecss.nl/standard/ecss-e-st-70-01c-space-engineering-onboard-data-handling/):** Space engineering onboard data handling standard — covers telemetry and telecommand packet formats for European space missions
+- **[ECSS-Q-ST-80C](https://ecss.nl/standard/ecss-q-st-80c-software-product-assurance/):** Software product assurance standard — safety and security requirements for flight software development
