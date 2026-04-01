@@ -354,3 +354,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [AMSAT-NA](https://www.amsat.org/): North American amateur satellite organization with satellite design docs, TLE feeds, and transponder frequency lists
 - [RTL-SDR Blog](https://www.rtl-sdr.com/): Premier resource for RTL-SDR tutorials, satellite reception guides, and cheap hardware hacks
 - [SDRplay Community](https://www.sdrplay.com/community/): Active forum for RSP series SDR owners with satellite tracking tutorials and signal libraries
+- [GPS Spoofing Incidents Near Russian Border Regions](https://www.gpsworld.com/): Documented cases of large-scale GPS spoofing affecting commercial aviation and maritime navigation
+- [Maritime AIS Spoofing: Ghost Ships and Phantom Fleets](https://www.c4ads.org/): C4ADS investigation into systematic AIS position falsification using satellite-based broadcasts
