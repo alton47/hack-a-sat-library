@@ -320,3 +320,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[RFC 7116 — LTP (Licklider Transmission Protocol)](https://tools.ietf.org/html/rfc7116):** Point-to-point protocol for high-latency links including deep space — part of the DTN protocol suite
 - **[Great Scott Gadgets SDR Course](https://greatscottgadgets.com/sdr/):** Michael Ossmann's free hands-on SDR course using HackRF — covers modulation, demodulation, and practical signal analysis
 - **[Cybrary SDR Fundamentals](https://www.cybrary.it/):** Beginner-friendly software-defined radio course with exercises applicable to satellite signal reception
+- **[MIT OCW 16.851 Satellite Engineering](https://ocw.mit.edu/courses/16-851-satellite-engineering-fall-2003/):** Full MIT lecture series on satellite design, orbital mechanics, and communication subsystems — free archived course
+- **[Coursera Spacecraft Dynamics and Control Specialization](https://www.coursera.org/specializations/spacecraft-dynamics-control):** University of Colorado Boulder four-course series on spacecraft attitude, orbital mechanics, and control
