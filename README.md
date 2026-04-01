@@ -252,3 +252,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [China's ASAT Test Debris Field — Five Years Later](https://aerospace.org/): Aerospace Corporation assessment of the 2007 FY-1C debris cloud and its ongoing implications for LEO operations
 - [GPS Spoofing Incidents Near Russian Border Regions](https://www.gpsworld.com/): Documented cases of large-scale GPS spoofing affecting commercial aviation and maritime navigation
 - [Maritime AIS Spoofing: Ghost Ships and Phantom Fleets](https://www.c4ads.org/): C4ADS investigation into systematic AIS position falsification using satellite-based broadcasts
+- [CubeSat Cybersecurity Attack Surface Analysis](https://spectrum.ieee.org/): IEEE Spectrum investigation into the minimal-to-nonexistent security posture of commercial CubeSat buses
+- [The Rise of Commercial LEO Constellations and the Security Implications](https://spacenews.com/): Analysis of Starlink, OneWeb, and Kuiper security architecture decisions
