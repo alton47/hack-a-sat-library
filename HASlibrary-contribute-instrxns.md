@@ -442,3 +442,23 @@ A: Yes. Open a PR that removes the resource and explains why it is no longer rel
 
 **Q: How do I propose a new category?**
 A: Add your resource to the most relevant existing section and include `NEW CATEGORY: [Proposed Name]` in your PR description. The maintainers will evaluate and restructure if warranted.
+
+---
+
+## Writing Good Descriptions
+
+A good resource description:
+- Explains **what** the resource is in the first clause
+- Explains **why** it is relevant to satellite security in the second clause
+- Is written in plain, direct language — avoid marketing speak
+- Is one to three sentences maximum
+- Includes the author or organization name where attribution matters
+
+**Too vague:**
+> A useful tool for satellite research.
+
+**Too long:**
+> This tool was created by researchers at the University of Somewhere in 2019 and presented at a conference and it has been downloaded many times and is very popular among researchers who work on satellites and has many features including signal demodulation and decoding and packet parsing and many other things.
+
+**Just right:**
+> GNU Radio out-of-tree module implementing signal chain decoders for 100+ amateur, scientific, and weather satellites. Covers demodulation, frame sync, Reed-Solomon FEC, and protocol-specific parsing in a single installable package.
