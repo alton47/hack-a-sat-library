@@ -270,3 +270,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[STK (Systems Tool Kit)](https://www.agi.com/products/stk):** Industry-standard satellite analysis software with free educational tier — used for coverage analysis and conjunction assessment
 - **[multimon-ng](https://github.com/EliasOenal/multimon-ng):** Multi-mode digital decoder supporting POCSAG, FLEX, EAS, and other protocols used in satellite paging and alerting systems
 - **[DSD (Digital Speech Decoder)](https://github.com/szechyjs/dsd):** Decodes digital voice protocols including P25, D-STAR, and DMR — occasionally encountered on satellite downlinks
+- **[AFL++ Satellite Firmware Fuzzing Guide](https://github.com/AFLplusplus/AFLplusplus):** Applying coverage-guided fuzzing to satellite firmware images using AFL++ with QEMU binary mode — documented in HAS 2020 challenges
+- **[Boofuzz CCSDS Protocol Fuzzer](https://github.com/jtpereyda/boofuzz):** Network protocol fuzzer extended for CCSDS telecommand frame fuzzing against satellite command handlers
