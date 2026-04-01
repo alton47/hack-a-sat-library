@@ -294,3 +294,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [NAVCERT 2019 — GNSS Spoofing Detection and Mitigation](https://www.youtube.com/watch?v=): Signal-level and application-level countermeasures for GPS/GNSS spoofing with live hardware demonstration
 - [TeleCommunication Systems SDR Tutorial Series](https://www.youtube.com/watch?v=): Multi-part series on BPSK, QPSK, and OQPSK demodulation as used in NOAA and weather satellite downlinks
 - [GOES-R Series Ground System Overview](https://www.youtube.com/watch?v=): NOAA technical briefing on the GOES-R ground system architecture including uplink and command security design
+- [SEC-T 2010 — VSAT Hacking](https://www.youtube.com/watch?v=): Early presentation on vulnerabilities in VSAT systems including unencrypted DVB-RCS return channels
+- [Packet Hacking Village — Satellite Comms OPSEC Failures](https://www.youtube.com/watch?v=): Survey of plaintext satellite communication channels observed across maritime, aviation, and military-adjacent operators
