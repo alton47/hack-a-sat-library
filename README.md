@@ -250,3 +250,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [Satellite Catalog Browser](https://celestrak.com/satcat/search.php): Search NORAD catalog by name, country, orbital regime, and operational status
 - [Viasat KA-SAT cyberattack analysis (2022)](https://www.wired.com/): Detailed reporting on the February 2022 satellite modem wiper attack that disrupted Ukrainian communications at the start of the invasion
 - [China's ASAT Test Debris Field — Five Years Later](https://aerospace.org/): Aerospace Corporation assessment of the 2007 FY-1C debris cloud and its ongoing implications for LEO operations
+- [GPS Spoofing Incidents Near Russian Border Regions](https://www.gpsworld.com/): Documented cases of large-scale GPS spoofing affecting commercial aviation and maritime navigation
+- [Maritime AIS Spoofing: Ghost Ships and Phantom Fleets](https://www.c4ads.org/): C4ADS investigation into systematic AIS position falsification using satellite-based broadcasts
