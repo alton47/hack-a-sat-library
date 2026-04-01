@@ -262,3 +262,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [Mandiant APT40 and Maritime Satellite Targeting](https://www.mandiant.com/): FireEye/Mandiant report on Chinese APT activity targeting shipping and satellite communications firms
 - **[SatDump](https://github.com/SatDump/SatDump):** Generic satellite data processing software supporting NOAA APT, HRPT, GOES HRIT/EMWIN, MetOp, FengYun, and dozens of other downlink formats
 - **[HRPT Reader](https://www.geo-web.org.uk/hrpt.php):** Windows application for decoding and visualizing HRPT imagery from NOAA and MetOp satellites
+- **[gr-satellites](https://github.com/daniestevez/gr-satellites):** Extensive GNU Radio OOT module with demodulators and decoders for 100+ amateur, scientific, and weather satellites
+- **[satellite-js NPM](https://github.com/shashwatak/satellite-js):** Full-featured JavaScript satellite propagation library — ideal for building web-based tracking and visualization tools
