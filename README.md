@@ -370,3 +370,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[NIST SP 800-53 Rev5 Applied to Space Systems](https://csrc.nist.gov/publications/sp800)** — mapping of the NIST security control framework to space mission security requirements
 - **[CCSDS Blue Book: Space Packet Protocol (CCSDS 133.0-B-2)](https://public.ccsds.org/Pubs/133x0b2e1.pdf)** — normative specification of the Space Packet Protocol header format and multiplexing architecture
 - **[CCSDS Blue Book: TM Space Data Link Protocol (CCSDS 132.0-B-3)](https://public.ccsds.org/Pubs/132x0b3.pdf)** — telemetry frame structure specification for downlink data — essential for CCSDS packet parsing
+- **[space-packet-parser](https://github.com/medley56/space-packet-parser):** Pure Python CCSDS Space Packet Protocol parser supporting automatic packet definition loading from XTCE and CSV formats
+- **[pyccsds](https://github.com/pyccsds/pyccsds):** Python library for encoding and decoding CCSDS telemetry and telecommand frames including AOS, TM, and Space Packet layers
