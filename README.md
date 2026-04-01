@@ -276,3 +276,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[GPredict](http://gpredict.oz9aec.net/):** Cross-platform real-time satellite tracking with Doppler correction output for radio CAT interfaces
 - **[GQRX](https://gqrx.dk/):** Open-source SDR receiver for Linux and macOS supporting RTL-SDR, HackRF, USRP, and other hardware — standard for initial satellite signal survey
 - **[SDR# (SDRSharp)](https://airspy.com/download/):** Most widely used Windows SDR application — extensive plugin ecosystem for satellite audio and data demodulation
+- **[4NEC2 Antenna Modeler](https://www.qsl.net/4nec2/):** Free NEC2-based antenna modeling software — used for designing Yagi and helical antennas optimized for VHF/UHF satellite bands
+- **[Online Yagi Calculator](https://www.changpuak.ch/electronics/yagi_uda_antenna_DL6WU.php):** Browser-based DL6WU Yagi calculator optimized for the 137 MHz and 435 MHz satellite bands
