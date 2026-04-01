@@ -378,3 +378,21 @@ A good resource description:
 | `broken-link` | Existing link is dead and needs replacement |
 | `enhancement` | Improves an existing entry rather than adding a new one |
 | `stale` | Resource is outdated and should be reviewed for removal |
+
+---
+
+## Versioning and Changelog
+
+This library does not use semantic versioning. Instead, significant milestones are tagged by year and quarter:
+
+- `2020-Q2` — Initial Hack-A-Sat challenge launch
+- `2020-Q4` — Post-challenge community expansion
+- `2021-Q2` — HAS 2021 qualifier additions
+- `2022-Q1` — Viasat incident resources added
+- `2023-Q1` — Space Policy Directive-5 compliance resources
+- `2024-Q1` — CubeSat security and CCSDS deep-dive expansion
+
+To view all changes between tags:
+```bash
+git log 2020-Q2..2024-Q1 --oneline
+```
