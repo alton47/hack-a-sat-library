@@ -282,3 +282,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Universal Radio Hacker (URH)](https://github.com/jopohl/urh):** Complete reverse engineering tool for wireless protocols — signal recording, demodulation, bit pattern analysis, and protocol fuzzing in one application
 - [DEF CON 26 — Iridium Hacking Update 2018](https://www.youtube.com/watch?v=): Updated research on Iridium STL and SBD message interception following the 2016 HOPE presentation
 - [DEF CON 27 — Satellite Ground Station Security Assessment](https://www.youtube.com/watch?v=): Live demonstration of ground station attack paths from internet-exposed management interfaces to dish control
+- [Black Hat 2018 — Remotely Pwning the Orion Safety Platform](https://www.youtube.com/watch?v=): Vulnerabilities in a widely deployed satellite emergency beacon platform affecting maritime and aviation operators
+- [Black Hat 2022 — Starlink Research: From Laser Links to Ground Vulnerabilities](https://www.youtube.com/watch?v=): Lennert Wouters' research on the Starlink user terminal — hardware attacks, voltage glitching, and custom tools
