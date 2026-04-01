@@ -324,3 +324,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Coursera Spacecraft Dynamics and Control Specialization](https://www.coursera.org/specializations/spacecraft-dynamics-control):** University of Colorado Boulder four-course series on spacecraft attitude, orbital mechanics, and control
 - **[SANS FOR578 — Cyber Threat Intelligence](https://www.sans.org/courses/cyber-threat-intelligence/):** Threat intelligence methodology applicable to tracking nation-state actors targeting satellite infrastructure
 - **[Aerospace Village Learning Resources](https://aerospacevillage.org/learn/):** Free curated learning path for aviation and space cybersecurity from the DEF CON Aerospace Village team
+- **[Aerospace Village at DEF CON](https://aerospacevillage.org/):** Dedicated aerospace security village within DEF CON featuring satellite, aviation, and drone security talks and CTF
+- **[SpaceCom Symposium](https://spacecomsymposium.com/):** Annual symposium focused on space communications technology and security policy
