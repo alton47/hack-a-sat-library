@@ -268,3 +268,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[ccsds_py](https://github.com/daniestevez/ccsds_py):** Pure Python CCSDS parser supporting Space Packet Protocol, AOS frames, and Reed-Solomon FEC decoding
 - **[GMAT (General Mission Analysis Tool)](https://opensource.gsfc.nasa.gov/projects/GMAT/):** NASA open-source tool for mission design, trajectory optimization, and orbit determination — widely used for CTF challenge setup
 - **[STK (Systems Tool Kit)](https://www.agi.com/products/stk):** Industry-standard satellite analysis software with free educational tier — used for coverage analysis and conjunction assessment
+- **[multimon-ng](https://github.com/EliasOenal/multimon-ng):** Multi-mode digital decoder supporting POCSAG, FLEX, EAS, and other protocols used in satellite paging and alerting systems
+- **[DSD (Digital Speech Decoder)](https://github.com/szechyjs/dsd):** Decodes digital voice protocols including P25, D-STAR, and DMR — occasionally encountered on satellite downlinks
