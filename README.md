@@ -328,3 +328,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[SpaceCom Symposium](https://spacecomsymposium.com/):** Annual symposium focused on space communications technology and security policy
 - **[MILCOM — Military Communications Conference](https://www.milcom.org/):** IEEE and AFCEA joint conference covering secure military satellite communications and anti-jamming technology
 - **[Advanced Maui Optical and Space Surveillance Technologies (AMOS)](https://amostech.com/):** Annual conference on space domain awareness including cyber threats to space assets
+- **[Airspy R2](https://airspy.com/airspy-r2/):** High-performance SDR with 10 MHz instantaneous bandwidth — preferred for wideband satellite surveillance over RTL-SDR
+- **[USRP B200mini](https://www.ettus.com/all-products/usrp-b200mini/):** Ettus Research USB SDR covering 70 MHz – 6 GHz with full-duplex capability — used in professional satcom research
