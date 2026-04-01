@@ -234,3 +234,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [AMSAT-NA](https://www.amsat.org/): North American amateur satellite organization with satellite design docs, TLE feeds, and transponder frequency lists
 - [IARU Satellite Frequency Coordination](https://www.iaru.org/reference/satellite-frequency-coordination/): International Amateur Radio Union coordination database for satellite frequency assignments
 - [UHF Satcom Band Plan](https://www.iaru-r1.org/): Detailed VHF/UHF satellite band allocations used by amateur and commercial LEO operators
+- [ITU Space Services](https://www.itu.int/en/ITU-R/space/Pages/default.aspx): International Telecommunication Union space services bureau — frequency filings and coordination records for all registered satellites
+- [ITU SNS Query](https://www.itu.int/net/ITU-R/space/snl/): Search ITU space network filings including orbital slots, frequencies, and operator details
