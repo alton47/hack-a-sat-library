@@ -298,3 +298,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [Packet Hacking Village — Satellite Comms OPSEC Failures](https://www.youtube.com/watch?v=): Survey of plaintext satellite communication channels observed across maritime, aviation, and military-adjacent operators
 - **[An Introduction to Mission Design for Geostationary Satellites](https://www.springer.com/)** by J.J. Pocha — GEO mission design with focus on station-keeping and communications payload
 - **[Satellite Technology: Principles and Applications, 3rd Ed.](https://www.wiley.com/)** by Anil K. Maini — comprehensive reference covering satellite communication, navigation, and remote sensing systems
+- **[Cybersecurity for Space: Protecting the Final Frontier](https://www.amazon.com/)** by Jacob G. Oakley — first dedicated space cybersecurity textbook covering threat modeling, policy, and technical countermeasures
+- **[NIST SP 800-53 Rev5 Applied to Space Systems](https://csrc.nist.gov/publications/sp800)** — mapping of the NIST security control framework to space mission security requirements
