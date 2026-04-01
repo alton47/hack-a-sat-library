@@ -253,3 +253,34 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 *Also check out the [Aviation Hacking Resource Library](https://github.com/deptofdefense/hack-aviation-library/blob/master/README.md)*
 
 ![Space Security Challenge Footer](./graphics/DDShackasatlogobottom.png "Space Security Challenge 2020 Logo")
+
+---
+
+## Example Contributions
+
+The following examples illustrate correctly formatted resource entries:
+
+### Good Example — Tool Entry
+```markdown
+- **[SatDump](https://github.com/SatDump/SatDump):** Generic satellite data processing software supporting NOAA APT, HRPT, GOES HRIT/EMWIN, MetOp, FengYun, and dozens of additional downlink formats. Actively maintained with broad hardware support.
+```
+
+### Good Example — Article Entry
+```markdown
+- [Hackers could shut down satellites — or turn them into weapons](https://theconversation.com/hackers-could-shut-down-satellites-or-turn-them-into-weapons-130932) by William Akoto — accessible overview of attack vectors applicable to LEO and GEO satellite platforms
+```
+
+### Good Example — Video Entry
+```markdown
+- [DEF CON 25 — All Your GPS Are Belong to Us](https://www.youtube.com/watch?v=xxxxx): Comprehensive survey of GPS spoofing techniques from signal generation to victim device exploitation with live hardware demo
+```
+
+### Bad Example — Missing Description
+```markdown
+- [Some Satellite Tool](https://example.com)
+```
+
+### Bad Example — Non-Working Link
+```markdown
+- [Old Paper](https://example.com/404): This link no longer resolves and will be rejected
+```
