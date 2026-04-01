@@ -258,3 +258,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [Teleport Security in VSAT Networks](https://via-satellite.com/): Via Satellite reporting on vulnerabilities in hub-and-spoke VSAT architectures used across government and enterprise
 - [Space Policy Directive-5: Cybersecurity Principles for Space Systems](https://www.whitehouse.gov/presidential-actions/memorandum-space-policy-directive-5-cybersecurity-principles-space-systems/): US executive-level directive establishing minimum cybersecurity requirements for commercial space operators
 - [CISA Space Systems Critical Infrastructure Guidance](https://www.cisa.gov/): CISA guidance on protecting space systems as critical national infrastructure
+- [Recorded Future: Threats to Satellite Internet Providers](https://www.recordedfuture.com/): Threat intelligence report profiling nation-state actors targeting satellite communication infrastructure
+- [Mandiant APT40 and Maritime Satellite Targeting](https://www.mandiant.com/): FireEye/Mandiant report on Chinese APT activity targeting shipping and satellite communications firms
