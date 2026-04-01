@@ -344,3 +344,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[RadioML Modulation Recognition](https://github.com/radioML/dataset):** Benchmark dataset for deep learning-based automatic modulation classification of RF signals
 - **[Gunter's Space Page](https://space.skyrocket.de/):** The most comprehensive database of satellites, rockets, and launch vehicles — invaluable for identifying targets by name, frequency, or orbital regime
 - **[Jonathan's Space Pages](https://www.planet4589.org/):** Detailed orbital data, launch logs, and reentry records maintained independently since the early 1990s with exceptional historical depth
+- **[VIRGO Radio Telescope Software](https://github.com/0xCoto/VIRGO):** Python-based spectrometer for radio astronomy and satellite signal observation — runs on Raspberry Pi with RTL-SDR
+- **[PocketQube Shop Resources](https://www.pocketqubeshop.com/):** Hardware platform and documentation for PocketQube femtosatellites — the smallest deployable spacecraft class
