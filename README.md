@@ -312,3 +312,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [HAS 2021: Ground Segment Challenge Writeup by CCCFR](https://github.com/): Complete walkthrough of ground station exploitation challenge including custom protocol fuzzing approach
 - [SpaceCTF Compiled Resource Thread (Reddit)](https://www.reddit.com/r/netsec/): Community-aggregated thread linking all public HAS and space-themed CTF writeups and tools
 - [Aerospace Village CTF Writeup Collection](https://aerospacevillage.org/): DEF CON Aerospace Village capture-the-flag challenge solutions covering avionics and satellite scenarios
+- **[ECSS-E-ST-70-01C](https://ecss.nl/standard/ecss-e-st-70-01c-space-engineering-onboard-data-handling/):** Space engineering onboard data handling standard — covers telemetry and telecommand packet formats for European space missions
+- **[ECSS-Q-ST-80C](https://ecss.nl/standard/ecss-q-st-80c-software-product-assurance/):** Software product assurance standard — safety and security requirements for flight software development
