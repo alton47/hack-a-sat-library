@@ -364,3 +364,17 @@ A good resource description:
 
 **Just right:**
 > GNU Radio out-of-tree module implementing signal chain decoders for 100+ amateur, scientific, and weather satellites. Covers demodulation, frame sync, Reed-Solomon FEC, and protocol-specific parsing in a single installable package.
+
+---
+
+## Issue and PR Labels
+
+| Label | Meaning |
+|---|---|
+| `good first issue` | Suitable for first-time contributors |
+| `needs-verification` | Link or description needs fact-checking |
+| `duplicate` | Resource is already listed |
+| `new-category` | PR proposes a new top-level section |
+| `broken-link` | Existing link is dead and needs replacement |
+| `enhancement` | Improves an existing entry rather than adding a new one |
+| `stale` | Resource is outdated and should be reviewed for removal |
