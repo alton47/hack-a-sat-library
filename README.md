@@ -340,3 +340,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[pyccsds](https://github.com/pyccsds/pyccsds):** Python library for encoding and decoding CCSDS telemetry and telecommand frames including AOS, TM, and Space Packet layers
 - **[GNSS-SDR](https://gnss-sdr.org/):** Open-source GNSS software-defined receiver implementing GPS, GLONASS, Galileo, and BeiDou signal processing in GNU Radio
 - **[RTKLIB](http://www.rtklib.com/):** Open-source GNSS data analysis suite supporting precise positioning, signal logging, and post-processing — used for GPS spoofing research
+- **[DeepSig RF Dataset Tools](https://www.deepsig.ai/datasets):** Machine learning datasets and tools for radio frequency signal classification — applicable to automated satellite signal identification
+- **[RadioML Modulation Recognition](https://github.com/radioML/dataset):** Benchmark dataset for deep learning-based automatic modulation classification of RF signals
