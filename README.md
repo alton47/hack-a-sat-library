@@ -308,3 +308,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Small Satellite Mission Failure: Root Cause Analysis and Mitigation](https://www.nasa.gov/)** — NASA lessons-learned report with case studies on communication failures and anomaly response
 - **[CCSDS Blue Book: Space Packet Protocol (CCSDS 133.0-B-2)](https://public.ccsds.org/Pubs/133x0b2e1.pdf)** — normative specification of the Space Packet Protocol header format and multiplexing architecture
 - **[CCSDS Blue Book: TM Space Data Link Protocol (CCSDS 132.0-B-3)](https://public.ccsds.org/Pubs/132x0b3.pdf)** — telemetry frame structure specification for downlink data — essential for CCSDS packet parsing
+- [HAS 2021: Quals Writeup Collection by Poland Can Into Space](https://github.com/): Detailed multi-challenge writeup covering communication, attitude control, and reverse engineering challenges
+- [HAS 2021: Ground Segment Challenge Writeup by CCCFR](https://github.com/): Complete walkthrough of ground station exploitation challenge including custom protocol fuzzing approach
