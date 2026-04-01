@@ -384,3 +384,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Coursera Spacecraft Dynamics and Control Specialization](https://www.coursera.org/specializations/spacecraft-dynamics-control):** University of Colorado Boulder four-course series on spacecraft attitude, orbital mechanics, and control
 - **[Aerospace Village at DEF CON](https://aerospacevillage.org/):** Dedicated aerospace security village within DEF CON featuring satellite, aviation, and drone security talks and CTF
 - **[SpaceCom Symposium](https://spacecomsymposium.com/):** Annual symposium focused on space communications technology and security policy
+- **[Secure World Foundation Space Sustainability](https://swfound.org/):** Policy research on space debris, responsible behavior in orbit, and the intersection of cybersecurity with space sustainability
+- **[CSIS Aerospace Security Project](https://aerospace.csis.org/):** Center for Strategic and International Studies research on space threats, anti-satellite weapons, and defense posture
