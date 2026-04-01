@@ -254,3 +254,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [Maritime AIS Spoofing: Ghost Ships and Phantom Fleets](https://www.c4ads.org/): C4ADS investigation into systematic AIS position falsification using satellite-based broadcasts
 - [CubeSat Cybersecurity Attack Surface Analysis](https://spectrum.ieee.org/): IEEE Spectrum investigation into the minimal-to-nonexistent security posture of commercial CubeSat buses
 - [The Rise of Commercial LEO Constellations and the Security Implications](https://spacenews.com/): Analysis of Starlink, OneWeb, and Kuiper security architecture decisions
+- [Ground Station Network Security — A Gap Analysis](https://aerospace.org/): The Aerospace Corporation white paper on attack paths through commercial ground station networks
+- [Teleport Security in VSAT Networks](https://via-satellite.com/): Via Satellite reporting on vulnerabilities in hub-and-spoke VSAT architectures used across government and enterprise
