@@ -266,3 +266,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[satellite-js NPM](https://github.com/shashwatak/satellite-js):** Full-featured JavaScript satellite propagation library — ideal for building web-based tracking and visualization tools
 - **[Scapy CCSDS Layer](https://github.com/pyccsds/pyccsds):** Extends Scapy with CCSDS Space Packet Protocol, CLCW, and TC/TM frame dissectors for protocol fuzzing and analysis
 - **[ccsds_py](https://github.com/daniestevez/ccsds_py):** Pure Python CCSDS parser supporting Space Packet Protocol, AOS frames, and Reed-Solomon FEC decoding
+- **[GMAT (General Mission Analysis Tool)](https://opensource.gsfc.nasa.gov/projects/GMAT/):** NASA open-source tool for mission design, trajectory optimization, and orbit determination — widely used for CTF challenge setup
+- **[STK (Systems Tool Kit)](https://www.agi.com/products/stk):** Industry-standard satellite analysis software with free educational tier — used for coverage analysis and conjunction assessment
