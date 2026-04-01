@@ -358,3 +358,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [Maritime AIS Spoofing: Ghost Ships and Phantom Fleets](https://www.c4ads.org/): C4ADS investigation into systematic AIS position falsification using satellite-based broadcasts
 - [Space Policy Directive-5: Cybersecurity Principles for Space Systems](https://www.whitehouse.gov/presidential-actions/memorandum-space-policy-directive-5-cybersecurity-principles-space-systems/): US executive-level directive establishing minimum cybersecurity requirements for commercial space operators
 - [CISA Space Systems Critical Infrastructure Guidance](https://www.cisa.gov/): CISA guidance on protecting space systems as critical national infrastructure
+- **[AFL++ Satellite Firmware Fuzzing Guide](https://github.com/AFLplusplus/AFLplusplus):** Applying coverage-guided fuzzing to satellite firmware images using AFL++ with QEMU binary mode — documented in HAS 2020 challenges
+- **[Boofuzz CCSDS Protocol Fuzzer](https://github.com/jtpereyda/boofuzz):** Network protocol fuzzer extended for CCSDS telecommand frame fuzzing against satellite command handlers
