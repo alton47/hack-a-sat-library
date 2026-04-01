@@ -352,3 +352,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [APT Satellite Decoder Guide](https://noaa-apt.mbernardi.com.ar/): Open-source NOAA APT image decoder with detailed signal format documentation
 - [AMSAT Satellite Status Page](https://www.amsat.org/status/): Live operational status of amateur radio satellites — essential for research on active targets
 - [AMSAT-NA](https://www.amsat.org/): North American amateur satellite organization with satellite design docs, TLE feeds, and transponder frequency lists
+- [RTL-SDR Blog](https://www.rtl-sdr.com/): Premier resource for RTL-SDR tutorials, satellite reception guides, and cheap hardware hacks
+- [SDRplay Community](https://www.sdrplay.com/community/): Active forum for RSP series SDR owners with satellite tracking tutorials and signal libraries
