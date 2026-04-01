@@ -318,3 +318,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[NIST SP 800-160 Vol. 2](https://csrc.nist.gov/publications/detail/sp/800-160/vol-2/final):** Cyber-Resilient Systems — engineering trustworthy secure systems applicable to space mission architecture
 - **[RFC 5050 — Bundle Protocol](https://tools.ietf.org/html/rfc5050):** Delay-Tolerant Networking bundle protocol used in deep space communication links with disruption-tolerant characteristics
 - **[RFC 7116 — LTP (Licklider Transmission Protocol)](https://tools.ietf.org/html/rfc7116):** Point-to-point protocol for high-latency links including deep space — part of the DTN protocol suite
+- **[Great Scott Gadgets SDR Course](https://greatscottgadgets.com/sdr/):** Michael Ossmann's free hands-on SDR course using HackRF — covers modulation, demodulation, and practical signal analysis
+- **[Cybrary SDR Fundamentals](https://www.cybrary.it/):** Beginner-friendly software-defined radio course with exercises applicable to satellite signal reception
