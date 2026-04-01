@@ -242,3 +242,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [Space-Track TLE API](https://www.space-track.org/documentation#/tle): Programmatic API for pulling current and historical TLE sets — critical for satellite tracking automation
 - [DarkSky Network](https://darksky.net/): Weather and atmospheric data useful for ground station operations and signal interference modeling
 - [RF-Seeker Spectrum Database](https://www.sigidwiki.com/wiki/Signal_Identification_Guide): Crowdsourced signal identification guide — critical for classifying intercepted satellite downlinks
+- [Globalstar Coverage Map](https://www.globalstar.com/en-us/corporate/coverage-map): Interactive coverage visualization for Globalstar LEO constellation — useful for attack surface analysis
+- [Iridium NEXT Constellation Overview](https://www.iridium.com/network/iridium-next/): Technical overview of the 66-satellite Iridium NEXT constellation architecture
