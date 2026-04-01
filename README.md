@@ -286,3 +286,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [Black Hat 2022 — Starlink Research: From Laser Links to Ground Vulnerabilities](https://www.youtube.com/watch?v=): Lennert Wouters' research on the Starlink user terminal — hardware attacks, voltage glitching, and custom tools
 - [34C3 — Satellite Internet: Not Rocket Science](https://media.ccc.de/): CCC talk on practical interception and analysis of Ka-band and Ku-band satellite broadband traffic
 - [36C3 — How to Build a Satellite Ground Station for Under $300](https://media.ccc.de/): DIY ground station construction with GNU Radio for NOAA, Meteor-M, and FengYun reception
+- [GRCon 2019 — Receiving and Decoding GOES-16 HRIT](https://www.youtube.com/watch?v=): Full walkthrough of GOES-16 full-disk imagery reception using RTL-SDR and GNU Radio
+- [GRCon 2020 — Satellite Signal Intelligence with Python and GNU Radio](https://www.youtube.com/watch?v=): Automated signal classification and protocol identification pipeline for satellite downlinks
