@@ -244,3 +244,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [RF-Seeker Spectrum Database](https://www.sigidwiki.com/wiki/Signal_Identification_Guide): Crowdsourced signal identification guide — critical for classifying intercepted satellite downlinks
 - [Globalstar Coverage Map](https://www.globalstar.com/en-us/corporate/coverage-map): Interactive coverage visualization for Globalstar LEO constellation — useful for attack surface analysis
 - [Iridium NEXT Constellation Overview](https://www.iridium.com/network/iridium-next/): Technical overview of the 66-satellite Iridium NEXT constellation architecture
+- [GNU Radio Wiki](https://wiki.gnuradio.org/): Comprehensive reference for flowgraph design, block development, and satellite signal processing
+- [GNU Radio OOT Module Index](https://www.gnuradio.org/ecosystem/): Directory of out-of-tree GNU Radio modules including satellite demodulators and decoders
