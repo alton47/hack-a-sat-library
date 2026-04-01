@@ -246,3 +246,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [Iridium NEXT Constellation Overview](https://www.iridium.com/network/iridium-next/): Technical overview of the 66-satellite Iridium NEXT constellation architecture
 - [GNU Radio Wiki](https://wiki.gnuradio.org/): Comprehensive reference for flowgraph design, block development, and satellite signal processing
 - [GNU Radio OOT Module Index](https://www.gnuradio.org/ecosystem/): Directory of out-of-tree GNU Radio modules including satellite demodulators and decoders
+- [TLE Format Reference](https://celestrak.com/NORAD/documentation/tle-fmt.php): Complete specification of the Two-Line Element set format with field-by-field breakdown
+- [Satellite Catalog Browser](https://celestrak.com/satcat/search.php): Search NORAD catalog by name, country, orbital regime, and operational status
