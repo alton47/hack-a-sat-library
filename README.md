@@ -332,3 +332,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[USRP B200mini](https://www.ettus.com/all-products/usrp-b200mini/):** Ettus Research USB SDR covering 70 MHz – 6 GHz with full-duplex capability — used in professional satcom research
 - **[Quadrifilar Helicoidal Antenna (QFH)](https://www.satnogs.org/wiki/Antennas):** Circularly polarized omnidirectional antenna optimized for LEO satellite passes — DIY builds documented in SatNOGS wiki
 - **[Dish Feed Design for Ku-band](https://www.dishpointer.com/):** Resources for repurposing consumer satellite TV dishes for active satellite research and signal interception
+- **[Raspberry Pi 4 as SDR Server](https://www.rtl-sdr.com/tag/raspberry-pi/):** Complete guides for running RTL-SDR server, SatNOGS client, and automated pass schedulers on Raspberry Pi 4
+- **[NVIDIA Jetson Nano for Real-Time Signal Processing](https://developer.nvidia.com/embedded/jetson-nano-developer-kit):** GPU-accelerated signal processing platform used for real-time satellite protocol decoding at high sample rates
