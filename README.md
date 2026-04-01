@@ -360,3 +360,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [CISA Space Systems Critical Infrastructure Guidance](https://www.cisa.gov/): CISA guidance on protecting space systems as critical national infrastructure
 - **[AFL++ Satellite Firmware Fuzzing Guide](https://github.com/AFLplusplus/AFLplusplus):** Applying coverage-guided fuzzing to satellite firmware images using AFL++ with QEMU binary mode — documented in HAS 2020 challenges
 - **[Boofuzz CCSDS Protocol Fuzzer](https://github.com/jtpereyda/boofuzz):** Network protocol fuzzer extended for CCSDS telecommand frame fuzzing against satellite command handlers
+- **[Inspectrum](https://github.com/miek/inspectrum):** Tool for analysing captured signals from software-defined radios — powerful for reverse engineering unknown satellite modulations
+- **[Universal Radio Hacker (URH)](https://github.com/jopohl/urh):** Complete reverse engineering tool for wireless protocols — signal recording, demodulation, bit pattern analysis, and protocol fuzzing in one application
