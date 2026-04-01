@@ -306,3 +306,41 @@ A: Yes. Open a PR that removes the resource and explains why it is no longer rel
 
 **Q: How do I propose a new category?**
 A: Add your resource to the most relevant existing section and include `NEW CATEGORY: [Proposed Name]` in your PR description. The maintainers will evaluate and restructure if warranted.
+
+---
+
+## Git Workflow for Contributors
+
+If you are new to GitHub pull requests, follow these steps:
+```bash
+# 1. Fork the repository on GitHub (click Fork in the top right)
+
+# 2. Clone your fork
+git clone https://github.com/YOURUSERNAME/hack-a-sat-library.git
+cd hack-a-sat-library
+
+# 3. Create a branch for your addition
+git checkout -b add-satdump-to-tools
+
+# 4. Make your change to README.md
+# (add your resource entry in the appropriate section)
+
+# 5. Verify your change looks correct
+git diff
+
+# 6. Stage and commit
+git add README.md
+git commit -m "Add SatDump to Tools and Projects"
+
+# 7. Push your branch
+git push origin add-satdump-to-tools
+
+# 8. Open a pull request on GitHub
+# Go to your fork, click "Compare & pull request"
+```
+
+**Important:** Always branch from the latest `master`:
+```bash
+git fetch upstream
+git rebase upstream/master
+```
