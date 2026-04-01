@@ -230,3 +230,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 ![Space Security Challenge Footer](./graphics/DDShackasatlogobottom.png "Space Security Challenge 2020 Logo")
 - [NOAA CLASS Archive](https://www.avl.class.noaa.gov/): Comprehensive Level Archive and Storage System — freely accessible NOAA satellite data including GOES and POES imagery
 - [APT Satellite Decoder Guide](https://noaa-apt.mbernardi.com.ar/): Open-source NOAA APT image decoder with detailed signal format documentation
+- [AMSAT Satellite Status Page](https://www.amsat.org/status/): Live operational status of amateur radio satellites — essential for research on active targets
+- [AMSAT-NA](https://www.amsat.org/): North American amateur satellite organization with satellite design docs, TLE feeds, and transponder frequency lists
