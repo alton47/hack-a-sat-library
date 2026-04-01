@@ -288,3 +288,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [36C3 — How to Build a Satellite Ground Station for Under $300](https://media.ccc.de/): DIY ground station construction with GNU Radio for NOAA, Meteor-M, and FengYun reception
 - [GRCon 2019 — Receiving and Decoding GOES-16 HRIT](https://www.youtube.com/watch?v=): Full walkthrough of GOES-16 full-disk imagery reception using RTL-SDR and GNU Radio
 - [GRCon 2020 — Satellite Signal Intelligence with Python and GNU Radio](https://www.youtube.com/watch?v=): Automated signal classification and protocol identification pipeline for satellite downlinks
+- [OreSat CubeSat Open Hardware Presentation](https://www.youtube.com/watch?v=): Portland State Aerospace Society walkthrough of their open-source CubeSat bus design and ground station software
+- [Libre Space Foundation — SatNOGS Architecture Deep Dive](https://www.youtube.com/watch?v=): Full technical overview of the SatNOGS open ground station network architecture and scheduling system
