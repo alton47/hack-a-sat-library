@@ -338,3 +338,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[beyond](https://github.com/galactics/beyond):** Lightweight Python space dynamics library with clean API for orbit propagation, frame conversions, and TLE parsing
 - **[space-packet-parser](https://github.com/medley56/space-packet-parser):** Pure Python CCSDS Space Packet Protocol parser supporting automatic packet definition loading from XTCE and CSV formats
 - **[pyccsds](https://github.com/pyccsds/pyccsds):** Python library for encoding and decoding CCSDS telemetry and telecommand frames including AOS, TM, and Space Packet layers
+- **[GNSS-SDR](https://gnss-sdr.org/):** Open-source GNSS software-defined receiver implementing GPS, GLONASS, Galileo, and BeiDou signal processing in GNU Radio
+- **[RTKLIB](http://www.rtklib.com/):** Open-source GNSS data analysis suite supporting precise positioning, signal logging, and post-processing — used for GPS spoofing research
