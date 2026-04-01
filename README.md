@@ -316,3 +316,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[ECSS-Q-ST-80C](https://ecss.nl/standard/ecss-q-st-80c-software-product-assurance/):** Software product assurance standard — safety and security requirements for flight software development
 - **[NIST IR 8401](https://csrc.nist.gov/):** Satellite Ground System Security Considerations — NIST guidance specifically addressing ground segment cybersecurity controls
 - **[NIST SP 800-160 Vol. 2](https://csrc.nist.gov/publications/detail/sp/800-160/vol-2/final):** Cyber-Resilient Systems — engineering trustworthy secure systems applicable to space mission architecture
+- **[RFC 5050 — Bundle Protocol](https://tools.ietf.org/html/rfc5050):** Delay-Tolerant Networking bundle protocol used in deep space communication links with disruption-tolerant characteristics
+- **[RFC 7116 — LTP (Licklider Transmission Protocol)](https://tools.ietf.org/html/rfc7116):** Point-to-point protocol for high-latency links including deep space — part of the DTN protocol suite
