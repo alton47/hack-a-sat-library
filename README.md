@@ -366,3 +366,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [DEF CON 27 — Satellite Ground Station Security Assessment](https://www.youtube.com/watch?v=): Live demonstration of ground station attack paths from internet-exposed management interfaces to dish control
 - [TeleCommunication Systems SDR Tutorial Series](https://www.youtube.com/watch?v=): Multi-part series on BPSK, QPSK, and OQPSK demodulation as used in NOAA and weather satellite downlinks
 - [GOES-R Series Ground System Overview](https://www.youtube.com/watch?v=): NOAA technical briefing on the GOES-R ground system architecture including uplink and command security design
+- **[Cybersecurity for Space: Protecting the Final Frontier](https://www.amazon.com/)** by Jacob G. Oakley — first dedicated space cybersecurity textbook covering threat modeling, policy, and technical countermeasures
+- **[NIST SP 800-53 Rev5 Applied to Space Systems](https://csrc.nist.gov/publications/sp800)** — mapping of the NIST security control framework to space mission security requirements
