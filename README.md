@@ -330,3 +330,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Advanced Maui Optical and Space Surveillance Technologies (AMOS)](https://amostech.com/):** Annual conference on space domain awareness including cyber threats to space assets
 - **[Airspy R2](https://airspy.com/airspy-r2/):** High-performance SDR with 10 MHz instantaneous bandwidth — preferred for wideband satellite surveillance over RTL-SDR
 - **[USRP B200mini](https://www.ettus.com/all-products/usrp-b200mini/):** Ettus Research USB SDR covering 70 MHz – 6 GHz with full-duplex capability — used in professional satcom research
+- **[Quadrifilar Helicoidal Antenna (QFH)](https://www.satnogs.org/wiki/Antennas):** Circularly polarized omnidirectional antenna optimized for LEO satellite passes — DIY builds documented in SatNOGS wiki
+- **[Dish Feed Design for Ku-band](https://www.dishpointer.com/):** Resources for repurposing consumer satellite TV dishes for active satellite research and signal interception
