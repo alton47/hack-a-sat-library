@@ -300,3 +300,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Satellite Technology: Principles and Applications, 3rd Ed.](https://www.wiley.com/)** by Anil K. Maini — comprehensive reference covering satellite communication, navigation, and remote sensing systems
 - **[Cybersecurity for Space: Protecting the Final Frontier](https://www.amazon.com/)** by Jacob G. Oakley — first dedicated space cybersecurity textbook covering threat modeling, policy, and technical countermeasures
 - **[NIST SP 800-53 Rev5 Applied to Space Systems](https://csrc.nist.gov/publications/sp800)** — mapping of the NIST security control framework to space mission security requirements
+- **[Software Defined Radio for Engineers](https://www.analog.com/en/education/education-library/software-defined-radio-for-engineers.html)** by Travis Collins et al. — free ADI textbook covering SDR fundamentals with ADALM-PLUTO exercises including satellite band reception
+- **[The Art and Science of Radio Direction Finding](https://www.amazon.com/)** — radio direction finding techniques applicable to locating rogue satellite uplink transmitters
