@@ -368,3 +368,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [GOES-R Series Ground System Overview](https://www.youtube.com/watch?v=): NOAA technical briefing on the GOES-R ground system architecture including uplink and command security design
 - **[Cybersecurity for Space: Protecting the Final Frontier](https://www.amazon.com/)** by Jacob G. Oakley — first dedicated space cybersecurity textbook covering threat modeling, policy, and technical countermeasures
 - **[NIST SP 800-53 Rev5 Applied to Space Systems](https://csrc.nist.gov/publications/sp800)** — mapping of the NIST security control framework to space mission security requirements
+- **[CCSDS Blue Book: Space Packet Protocol (CCSDS 133.0-B-2)](https://public.ccsds.org/Pubs/133x0b2e1.pdf)** — normative specification of the Space Packet Protocol header format and multiplexing architecture
+- **[CCSDS Blue Book: TM Space Data Link Protocol (CCSDS 132.0-B-3)](https://public.ccsds.org/Pubs/132x0b3.pdf)** — telemetry frame structure specification for downlink data — essential for CCSDS packet parsing
