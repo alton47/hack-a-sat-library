@@ -228,3 +228,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 *Also check out the [Aviation Hacking Resource Library](https://github.com/deptofdefense/hack-aviation-library/blob/master/README.md)*
 
 ![Space Security Challenge Footer](./graphics/DDShackasatlogobottom.png "Space Security Challenge 2020 Logo")
+- [NOAA CLASS Archive](https://www.avl.class.noaa.gov/): Comprehensive Level Archive and Storage System — freely accessible NOAA satellite data including GOES and POES imagery
+- [APT Satellite Decoder Guide](https://noaa-apt.mbernardi.com.ar/): Open-source NOAA APT image decoder with detailed signal format documentation
