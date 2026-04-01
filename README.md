@@ -238,3 +238,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [ITU SNS Query](https://www.itu.int/net/ITU-R/space/snl/): Search ITU space network filings including orbital slots, frequencies, and operator details
 - [RTL-SDR Blog](https://www.rtl-sdr.com/): Premier resource for RTL-SDR tutorials, satellite reception guides, and cheap hardware hacks
 - [SDRplay Community](https://www.sdrplay.com/community/): Active forum for RSP series SDR owners with satellite tracking tutorials and signal libraries
+- [Orbital Focus](https://www.orbitalfocus.uk/): Jonathan McDowell's independent tracker of orbital events, launch histories, and reentry predictions
+- [Space-Track TLE API](https://www.space-track.org/documentation#/tle): Programmatic API for pulling current and historical TLE sets — critical for satellite tracking automation
