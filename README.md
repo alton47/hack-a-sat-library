@@ -304,3 +304,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[The Art and Science of Radio Direction Finding](https://www.amazon.com/)** — radio direction finding techniques applicable to locating rogue satellite uplink transmitters
 - **[Optimal Spacecraft Trajectories](https://www.amazon.com/)** by John E. Prussing — trajectory optimization relevant to understanding orbital mechanics used in CTF challenges
 - **[Spacecraft Operations](https://www.springer.com/)** edited by Thomas Uhlig et al. — practical guide to satellite operations including telemetry, tracking, and command (TT&C) systems
+- **[CubeSat Handbook: From Mission Design to Operations](https://www.elsevier.com/)** edited by Chantal Cappelletti et al. — comprehensive guide to CubeSat development including communication subsystem design and ground station setup
+- **[Small Satellite Mission Failure: Root Cause Analysis and Mitigation](https://www.nasa.gov/)** — NASA lessons-learned report with case studies on communication failures and anomaly response
