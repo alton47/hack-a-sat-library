@@ -334,3 +334,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - **[Dish Feed Design for Ku-band](https://www.dishpointer.com/):** Resources for repurposing consumer satellite TV dishes for active satellite research and signal interception
 - **[Raspberry Pi 4 as SDR Server](https://www.rtl-sdr.com/tag/raspberry-pi/):** Complete guides for running RTL-SDR server, SatNOGS client, and automated pass schedulers on Raspberry Pi 4
 - **[NVIDIA Jetson Nano for Real-Time Signal Processing](https://developer.nvidia.com/embedded/jetson-nano-developer-kit):** GPU-accelerated signal processing platform used for real-time satellite protocol decoding at high sample rates
+- **[Orekit](https://www.orekit.org/):** Highly accurate Java space dynamics library covering orbit propagation, attitude modeling, maneuver planning, and coordinate frame transforms — used by ESA
+- **[beyond](https://github.com/galactics/beyond):** Lightweight Python space dynamics library with clean API for orbit propagation, frame conversions, and TLE parsing
