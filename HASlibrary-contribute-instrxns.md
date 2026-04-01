@@ -396,3 +396,27 @@ To view all changes between tags:
 ```bash
 git log 2020-Q2..2024-Q1 --oneline
 ```
+
+---
+
+## Automated Checks
+
+All pull requests run the following automated checks before human review:
+
+1. **Link Checker** — verifies all URLs return HTTP 200 (or 301/302 with valid destination)
+2. **Markdown Linter** — enforces consistent formatting using markdownlint
+3. **Duplicate Detector** — flags any URLs already present in the document
+4. **Trailing Whitespace Check** — fails if any line ends with whitespace
+
+To run these checks locally before submitting:
+```bash
+# Install dependencies
+npm install -g markdownlint-cli
+pip install requests
+
+# Run markdown lint
+markdownlint README.md HASlibrary-contribute-instrxns.md
+
+# Check for trailing whitespace
+grep -rn ' $' README.md HASlibrary-contribute-instrxns.md
+```
