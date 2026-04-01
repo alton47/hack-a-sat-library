@@ -290,3 +290,5 @@ The United States Air Force, in conjunction with the Defense Digital Service, pr
 - [GRCon 2020 — Satellite Signal Intelligence with Python and GNU Radio](https://www.youtube.com/watch?v=): Automated signal classification and protocol identification pipeline for satellite downlinks
 - [OreSat CubeSat Open Hardware Presentation](https://www.youtube.com/watch?v=): Portland State Aerospace Society walkthrough of their open-source CubeSat bus design and ground station software
 - [Libre Space Foundation — SatNOGS Architecture Deep Dive](https://www.youtube.com/watch?v=): Full technical overview of the SatNOGS open ground station network architecture and scheduling system
+- [DEF CON 23 — All Your GPS Are Belong to Us](https://www.youtube.com/watch?v=): Comprehensive survey of GPS spoofing and jamming techniques applicable to drone navigation attacks
+- [NAVCERT 2019 — GNSS Spoofing Detection and Mitigation](https://www.youtube.com/watch?v=): Signal-level and application-level countermeasures for GPS/GNSS spoofing with live hardware demonstration
