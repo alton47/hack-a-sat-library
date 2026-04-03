@@ -1,0 +1,10 @@
+Trajectory dumped to jobs/2026-04-03__13-35-51/devops_hard_task__KvjQN3u/agent/trajectory.json
+Unknown Error in LLM interaction: litellm.RateLimitError: RateLimitError: GroqException - {"error":{"message":"Rate limit reached for model `moonshotai/kimi-k2-instruct-0905` in organization `org_01kn7vgt80e32afn7gra3q5zse` service tier `on_demand` on tokens per day (TPD): Limit 300000, Used 298990, Requested 1374. Please try again in 1m44.832s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+
+Unknown Error in LLM interaction: litellm.RateLimitError: RateLimitError: GroqException - {"error":{"message":"Rate limit reached for model `moonshotai/kimi-k2-instruct-0905` in organization `org_01kn7vgt80e32afn7gra3q5zse` service tier `on_demand` on tokens per day (TPD): Limit 300000, Used 298954, Requested 1378. Please try again in 1m35.616s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+
+Unknown Error in LLM interaction: litellm.RateLimitError: RateLimitError: GroqException - {"error":{"message":"Rate limit reached for model `moonshotai/kimi-k2-instruct-0905` in organization `org_01kn7vgt80e32afn7gra3q5zse` service tier `on_demand` on tokens per day (TPD): Limit 300000, Used 298915, Requested 1378. Please try again in 1m24.384s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+
+Trajectory dumped to jobs/2026-04-03__13-35-51/devops_hard_task__KvjQN3u/agent/trajectory.json
+Trial devops_hard_task__KvjQN3u failed: litellm.RateLimitError: RateLimitError: GroqException - {"error":{"message":"Rate limit reached for model `moonshotai/kimi-k2-instruct-0905` in organization `org_01kn7vgt80e32afn7gra3q5zse` service tier `on_demand` on tokens per day (TPD): Limit 300000, Used 298915, Requested 1378. Please try again in 1m24.384s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+
