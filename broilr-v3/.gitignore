@@ -1,5 +1,0 @@
-.DS_Store
-*.local
-.vercel/
-node_modules/
-*.zip
