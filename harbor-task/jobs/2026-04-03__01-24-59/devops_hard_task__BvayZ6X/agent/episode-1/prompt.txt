@@ -1,0 +1,41 @@
+New Terminal Output:
+root@cf7c5f7a6403:/app# ls -la
+total 16
+drwxr-xr-x 1 root root 4096 Apr  2 22:23 .
+drwxr-xr-x 1 root root 4096 Apr  2 22:43 ..
+-rw-r--r-- 1 root root 1502 Apr  2 22:22 app.py
+-rw-r--r-- 1 root root   30 Apr  2 21:09 requirements.txt
+root@cf7c5f7a6403:/app#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
