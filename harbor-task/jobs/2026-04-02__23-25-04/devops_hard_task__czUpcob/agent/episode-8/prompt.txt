@@ -1,0 +1,6 @@
+New Terminal Output:
+
+    main()root@f8e6af7e8e6c:/app# python3 app.py
+Array created successfully
+SUCCESS
+root@f8e6af7e8e6c:/app#
