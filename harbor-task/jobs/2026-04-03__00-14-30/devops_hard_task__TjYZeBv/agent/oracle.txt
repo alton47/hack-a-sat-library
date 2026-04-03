@@ -1,0 +1,2 @@
+    next_id += 1  # BUG: should be += 1, this resets id to 1 every time
+Fix applied successfully
