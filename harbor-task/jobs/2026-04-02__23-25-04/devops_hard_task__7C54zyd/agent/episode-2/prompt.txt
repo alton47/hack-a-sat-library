@@ -1,0 +1,35 @@
+New Terminal Output:
+
+root@c6c90001357a:/app# cat requirements.txt
+requests==2.31.0
+numpy==1.26.4root@c6c90001357a:/app#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
