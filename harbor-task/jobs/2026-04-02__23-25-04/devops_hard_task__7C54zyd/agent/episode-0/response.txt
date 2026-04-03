@@ -1,0 +1,10 @@
+{
+  "analysis": "I'm in a Docker container at the /app directory as root. The task is to debug and fix an application that fails to run due to dependency and runtime issues. I need to first explore what's in the /app directory to understand the application structure and identify the issues.",
+  "plan": "First, I'll list the contents of the /app directory to see what files are present. Then I'll examine the main application files to understand what type of application this is and what dependencies might be missing.",
+  "commands": [
+    {
+      "keystrokes": "ls -la\n",
+      "duration": 0.1
+    }
+  ]
+}
