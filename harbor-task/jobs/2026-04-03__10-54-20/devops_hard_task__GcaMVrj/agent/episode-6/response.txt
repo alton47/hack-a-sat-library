@@ -1,0 +1,10 @@
+{
+  "analysis": "Good, I've fixed the status filtering. Now I need to fix the retry logic bug where it incorrectly adds the job to the processed list instead of the queue. The current code does 'processed.append(job)' in the retry function, but it should add to queue and remove from processed.",
+  "plan": "I need to fix the retry logic: 1) Change processed.append(job) to queue.append(job) to add the retried job back to the queue, and 2) Add code to remove the job from the processed list. I'll use sed to replace the processed.append line.",
+  "commands": [
+    {
+      "keystrokes": "sed -i 's/processed.append(job)/queue.append(job)/' /app/app.py\n",
+      "duration": 0.1
+    }
+  ]
+}
