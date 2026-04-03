@@ -1,0 +1,9 @@
+Current terminal state:
+New Terminal Output:
+
+root@ef81eead9b66:/app# pkill -f "python /app/app.py"
+bash: pkill: command not found
+root@ef81eead9b66:/app#
+
+
+Are you sure you want to mark the task as complete? This will trigger your solution to be graded and you won't be able to make any further corrections. If so, include "task_complete": true in your JSON response again.
