@@ -1,0 +1,9 @@
+New Terminal Output:
+
+root@1c166c8cf73d:/app# python3 -c "import requests; print('Testing POST /tasks'); r = requests.post('http://localhost:5000/tasks', json={'title': 'First task'}
+); print(f'Status: {r.status_code}, Response: {r.text}')"
+Testing POST /tasks
+127.0.0.1 - - [02/Apr/2026 21:38:15] "POST /tasks HTTP/1.1" 201 -
+Status: 201, Response: {"done":false,"id":1,"title":"First task"}
+
+root@1c166c8cf73d:/app#
