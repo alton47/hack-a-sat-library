@@ -1,0 +1,12 @@
+{"version": 2, "width": 160, "height": 40, "timestamp": 1775165643, "env": {"SHELL": "/bin/bash", "TERM": "tmux-256color"}}
+[0.002794, "o", "\u001b[?2004hroot@48aeb7989030:/app# "]
+[0.957385, "i", "clear\r"]
+[0.959248, "o", "clear\r\n\u001b[?2004l\r"]
+[0.960808, "o", "\u001b[H\u001b[J\u001b[3J"]
+[0.961114, "o", "\u001b[?2004hroot@48aeb7989030:/app# "]
+[2.575495, "i", "cat /app/app.py\n"]
+[2.575841, "o", "cat /app/app.py\r\n\u001b[?2004l\r"]
+[2.576935, "o", "from flask import Flask, jsonify, request\r\n\r\napp = Flask(__name__)\r\n\r\n# In-memory store\r\ntasks = []\r\nnext_id = 1\r\n\r\n@app.route(\"/tasks\", methods=[\"GET\"])\r\ndef get_tasks():\r\n    return jsonify(tasks)\r\n\r\n@app.route(\"/tasks\", methods=[\"POST\"])\r\ndef create_task():\r\n    global next_id\r\n    data = request.get_json()\r\n    if not data or \"title\" not in data:\r\n        return jsonify({\"error\": \"title required\"}), 400\r\n    task = {\"id\": next_id, \"title\": data[\"title\"], \"done\": False}\r\n    next_id =+ 1  # BUG: should be += 1, this resets id to 1 every time\r\n    tasks.append(task)\r\n    return jsonify(task), 201\r\n\r\n@app.route(\"/tasks/<int:task_id>/complete\", methods=[\"PUT\"])\r\ndef complete_task(task_id):\r\n    for task in tasks:\r\n        if task[\"id\"] == task_id:\r\n            task[\"done\"] = True\r\n            return jsonify(task)\r\n    return jsonify({\"error\": \"not found\"}), 404\r\n\r\nif __name__ == \"__main__\":\r\n    app.run(host=\"0.0.0.0\", port=5000)\u001b[?2004hroot@48aeb7989030:/app# "]
+[4.353603, "i", "sed -i 's/next_id =+ 1/next_id += 1/' /app/app.py\n"]
+[4.360109, "o", "sed -i 's/next_id =+ 1/next_id += 1/' /app/app.py\r\n\u001b[?2004l\r"]
+[4.371297, "o", "\u001b[?2004hroot@48aeb7989030:/app# "]
