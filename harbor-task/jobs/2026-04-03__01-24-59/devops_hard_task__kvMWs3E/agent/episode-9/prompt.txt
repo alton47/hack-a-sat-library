@@ -1,0 +1,5 @@
+New Terminal Output:
+
+^Croot@126255423aef:/app# nohup python app.py > flask.log 2>&1 &
+[1] 686
+root@126255423aef:/app#
