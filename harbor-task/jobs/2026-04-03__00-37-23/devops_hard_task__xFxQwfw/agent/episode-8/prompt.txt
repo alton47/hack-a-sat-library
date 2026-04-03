@@ -1,0 +1,6 @@
+New Terminal Output:
+
+Press CTRL+C to quit
+curl -X POST http://127.0.0.1:5000/tasks -H "Content-Type: application/json" -d '{"title": "First Task"}'
+bash: curl: command not found
+root@69c785b1b83d:/app#
