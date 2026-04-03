@@ -1,0 +1,9 @@
+{"version": 2, "width": 160, "height": 40, "timestamp": 1775213576, "env": {"SHELL": "/bin/bash", "TERM": "tmux-256color"}}
+[0.002841, "o", "\u001b[?2004hroot@e5560e390582:/app# "]
+[1.069865, "i", "clear\r"]
+[1.077013, "o", "clear\r\n\u001b[?2004l\r\u001b[H\u001b[J\u001b[3J\u001b[?2004hroot@e5560e390582:/app# "]
+[3.624672, "i", "ls -la\n"]
+[3.641183, "o", "ls -la\r\n\u001b[?2004l\r"]
+[3.642784, "o", "total 16\r\n"]
+[3.642879, "o", "drwxr-xr-x 1 root root 4096 Apr  2 22:59 .\r\ndrwxr-xr-x 1 root root 4096 Apr  3 10:52 ..\r\n-rw-r--r-- 1 root root 2436 Apr  2 22:56 app.py\r\n-rw-r--r-- 1 root root   30 Apr  2 21:09 requirements.txt\r\n"]
+[3.645129, "o", "\u001b[?2004hroot@e5560e390582:/app# "]
