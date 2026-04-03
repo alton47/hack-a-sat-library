@@ -1,0 +1,4 @@
+New Terminal Output:
+
+root@1fe1480c30ce:/app# sed -i '/queue.append(job)/,/processed.remove(job)/{/processed.remove(job)/d;}' app.py
+root@1fe1480c30ce:/app#
