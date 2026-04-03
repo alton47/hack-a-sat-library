@@ -1,0 +1,6 @@
+New Terminal Output:
+
+root@ef81eead9b66:/app# curl -X PUT http://localhost:5000/tasks/2/complete
+127.0.0.1 - - [02/Apr/2026 21:48:10] "PUT /tasks/2/complete HTTP/1.1" 200 -
+{"done":true,"id":2,"title":"Task 2"}
+root@ef81eead9b66:/app#
