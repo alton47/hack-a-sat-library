@@ -1,0 +1,41 @@
+New Terminal Output:
+root@f8e6af7e8e6c:/app# ls -la
+total 20
+drwxr-xr-x 1 root root 4096 Apr  2 20:21 .
+drwxr-xr-x 1 root root 4096 Apr  2 20:26 ..
+-rw-r--r-- 1 root root  114 Apr  2 19:58 Dockerfile
+-rw-r--r-- 1 root root  328 Apr  2 20:20 app.py
+-rw-r--r-- 1 root root   30 Apr  2 20:10 requirements.txt
+root@f8e6af7e8e6c:/app#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
