@@ -1,0 +1,157 @@
+[?2004hroot@41f6603b46fb:/app# asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004hroot@41f6603b46fb:/app# clear
+[?2004l[H[J[3J[?2004hroot@41f6603b46fb:/app# ls -la
+[?2004ltotal 16
+drwxr-xr-x 1 root root 4096 Apr  2 22:59 .
+drwxr-xr-x 1 root root 4096 Apr  3 07:54 ..
+-rw-r--r-- 1 root root 2436 Apr  2 22:56 app.py
+-rw-r--r-- 1 root root   30 Apr  2 21:09 requirements.txt
+[?2004hroot@41f6603b46fb:/app# cat app.py
+[?2004lfrom flask import Flask, jsonify, request
+import time
+
+app = Flask(__name__)
+
+queue = []
+processed = []
+next_id = 1
+RATE_LIMIT_WINDOW = 60
+MAX_JOBS_PER_WINDOW = 5
+job_timestamps = []
+
+@app.route("/jobs", methods=["POST"])
+def submit_job():
+    global next_id, job_timestamps
+    data = request.get_json()
+    if not data or "payload" not in data:
+        return jsonify({"error": "payload required"}), 400
+
+    now = time.time()
+    # Bug 1: wrong comparison — uses <= instead of >= so it never actually
+    # enforces the rate limit (always allows through)
+    job_timestamps = [t for t in job_timestamps if now - t <= RATE_LIMIT_WINDOW]
+    if len(job_timestamps) > MAX_JOBS_PER_WINDOW:
+        return jsonify({"error": "rate limit exceeded"}), 429
+
+    job = {"id": next_id, "payload": data["payload"], "status": "queued", "retries": 0}
+    next_id =+ 1  # Bug 2: =+ resets to 1
+    job_timestamps.append(now)
+    queue.append(job)
+    return jsonify(job), 202
+
+@app.route("/jobs/process", methods=["POST"])
+def process_jobs():
+    if not queue:
+        return jsonify({"processed": 0}), 200
+
+    job = queue.pop(0)
+    job["status"] = "processed"
+    # Bug 3: appends original dict reference but then mutates — should deepcopy
+    # Actually bug is: processes but never removes from queue properly
+    # because pop(0) already removed it — but re-adds on failure wrong
+    processed.append(job)
+    return jsonify({"processed": 1, "job": job}), 200
+
+@app.route("/jobs", methods=["GET"])
+def list_jobs():
+    status = request.args.get("status")
+    all_jobs = queue + processed
+    if status:
+        # Bug 4: filters with = instead of == (syntax would fail) 
+        # actual bug: wrong field — checks payload instead of status
+        return jsonify([j for j in all_jobs if j["payload"] == status])
+    return jsonify(all_jobs)
+
+@app.route("/jobs/<int:job_id>/retry", methods=["POST"])
+def retry_job(job_id):
+    for job in processed:
+        if job["id"] == job_id:
+            if job["retries"] >= 3:
+                return jsonify({"error": "max retries exceeded"}), 400
+            job["retries"] =+ 1  # Bug 5: same =+ bug
+            job["status"] = "queued"
+            # Bug 6: adds to processed again instead of moving to queue
+            processed.append(job)
+            return jsonify(job), 200
+    return jsonify({"error": "not found"}), 404
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+[?2004hroot@41f6603b46fb:/app# cat > app.py << 'EOF'
+[?2004l[?2004h> from flask import Flask, jsonify, request
+[?2004l[?2004h> import time
+[?2004l[?2004h> 
+[?2004l[?2004h> app = Flask(__name__)
+[?2004l[?2004h> 
+[?2004l[?2004h> queue = []
+[?2004l[?2004h> processed = []
+[?2004l[?2004h> next_id = 1
+[?2004l[?2004h> RATE_LIMIT_WINDOW = 60
+[?2004l[?2004h> MAX_JOBS_PER_WINDOW = 5
+[?2004l[?2004h> job_timestamps = []
+[?2004l[?2004h> 
+[?2004l[?2004h> @app.route("/jobs", methods=["POST"])
+[?2004l[?2004h> def submit_job():
+[?2004l[?2004h>     global next_id, job_timestamps
+[?2004l[?2004h>     data = request.get_json()
+[?2004l[?2004h>     if not data or "payload" not in data:
+[?2004l[?2004h>         return jsonify({"error": "payload required"}), 400
+[?2004l[?2004h> 
+[?2004l[?2004h>     now = time.time()
+[?2004l[?2004h>     job_timestamps = [t for t in job_timestamps if now - t <= RATE_LIMIT_WINDOW]
+[?2004l[?2004h>     if len(job_timestamps) > MAX_JOBS_PER_WINDOW:
+[?2004l[?2004h>         return jsonify({"error": "rate limit exceeded"}), 429
+[?2004l[?2004h> 
+[?2004l[?2004h>     job = {"id": next_id, "payload": data["payload"], "status": "queued", "retries": 0}
+[?2004l[?2004h>     next_id += 1  # Fixed: was =+ 1, now += 1
+[?2004l[?2004h>     job_timestamps.append(now)
+[?2004l[?2004h>     queue.append(job)
+[?2004l[?2004h>     return jsonify(job), 202
+[?2004l[?2004h> 
+[?2004l[?2004h> @app.route("/jobs/process", methods=["POST"])
+[?2004l[?2004h> def process_jobs():
+[?2004l[?2004h>     if not queue:
+[?2004l[?2004h>         return jsonify({"processed": 0}), 200
+[?2004l[?2004h> 
+[?2004l[?2004h>     job = queue.pop(0)
+[?2004l[?2004h>     job["status"] = "processed"
+[?2004l[?2004h>     processed.append(job)
+[?2004l[?2004h>     return jsonify({"processed": 1, "job": job}), 200
+[?2004l[?2004h> 
+[?2004l[?2004h> @app.route("/jobs", methods=["GET"])
+[?2004l[?2004h> def list_jobs():
+[?2004l[?2004h>     status = request.args.get("status")
+[?2004l[?2004h>     all_jobs = queue + processed
+[?2004l[?2004h>     if status:
+[?2004l[?2004h>         # Fixed: was checking j["payload"] == status, now j["status"] == status
+[?2004l[?2004h>         return jsonify([j for j in all_jobs if j["status"] == status])
+[?2004l[?2004h>     return jsonify(all_jobs)
+[?2004l[?2004h> 
+[?2004l[?2004h> @app.route("/jobs/<int:job_id>/retry", methods=["POST"])
+[?2004l[?2004h> def retry_job(job_id):
+[?2004l[?2004h>     for job in processed:
+[?2004l[?2004h>         if job["id"] == job_id:
+[?2004l[?2004h>             if job["retries"] >= 3:
+[?2004l[?2004h>                 return jsonify({"error": "max retries exceeded"}), 400
+[?2004l[?2004h>             job["retries"] += 1  # Fixed: was =+ 1, now += 1
+[?2004l[?2004h>             job["status"] = "queued"
+[?2004l[?2004h>             # Fixed: was appending to processed again, now move to queue
+[?2004l[?2004h>             processed.remove(job)
+[?2004l[?2004h>             queue.append(job)
+[?2004l[?2004h>             return jsonify(job), 200
+[?2004l[?2004h>     return jsonify({"error": "not found"}), 404
+[?2004l[?2004h> 
+[?2004l[?2004h> if __name__ == "__main__":
+[?2004l[?2004h>     app.run(host="0.0.0.0", port=5000)
+[?2004l[?2004h> EOF
+[?2004l[?2004hroot@41f6603b46fb:/app# python /app/app.py
+[?2004l * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.24.0.2:5000
+[33mPress CTRL+C to quit[0m
+^C[?2004hroot@41f6603b46fb:/app# 
