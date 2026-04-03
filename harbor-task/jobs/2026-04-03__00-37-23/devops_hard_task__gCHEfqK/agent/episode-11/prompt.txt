@@ -1,0 +1,4 @@
+Previous response had parsing errors:
+ERROR: Invalid JSON: Expecting ',' delimiter: line 2 column 110 (char 111) | Content preview: '{\n  "analysis": "Excellent! The first task was created successfully with ID 1. I can see the respons'...
+
+Please fix these issues and provide a proper JSON response.
