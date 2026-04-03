@@ -1,0 +1,17 @@
+New Terminal Output:
+
+root@4330de64b04c:/app# grep -A 10 -B 2 "for i, job in enumerate" app.py
+@app.route("/jobs/<int:job_id>/retry", methods=["POST"])
+def retry_job(job_id):
+    for i, job in enumerate(processed):
+        if job["id"] == job_id:
+            if job["retries"] >= 3:
+                return jsonify({"error": "max retries exceeded"}), 400
+            job["retries"] += 1
+            job["status"] = "queued"
+            # Move job from processed to queue
+            queue.append(processed.pop(i))
+            return jsonify(job), 200
+    return jsonify({"error": "not found"}), 404
+
+root@4330de64b04c:/app#
