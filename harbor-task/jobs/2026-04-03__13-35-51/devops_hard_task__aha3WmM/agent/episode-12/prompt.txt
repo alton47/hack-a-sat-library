@@ -1,0 +1,4 @@
+New Terminal Output:
+
+root@1fe1480c30ce:/app# sed -i 's/job\["retries"\] =+ 1/job["retries"] += 1/' app.py
+root@1fe1480c30ce:/app#
