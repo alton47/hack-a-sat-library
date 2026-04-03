@@ -1,0 +1,36 @@
+New Terminal Output:
+
+root@c0205cf75f59:/app# cat requirements.txt
+flask==3.0.3
+requests==2.31.0
+root@c0205cf75f59:/app#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
