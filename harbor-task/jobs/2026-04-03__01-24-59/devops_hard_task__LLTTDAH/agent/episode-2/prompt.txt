@@ -1,0 +1,7 @@
+New Terminal Output:
+
+root@78af0f1a0df8:/app# sed -i 's/next_id =+ 1/next_id += 1/' /app/app.py
+root@78af0f1a0df8:/app# sed -i 's/if len(tasks) == original_len:/if len(tasks) == original_len - 1:/' /app/app.py
+root@78af0f1a0df8:/app# sed -i 's/tasks = \[t for t in tasks if t\[\"id\"\] == task_id\]/tasks = [t for t in tasks if t["id"] != task_id]/' /app/app.py
+root@78af0f1a0df8:/app# sed -i 's/return jsonify({"error": "not found"}), 200/return jsonify({"error": "not found"}), 404/' /app/app.py
+root@78af0f1a0df8:/app#
