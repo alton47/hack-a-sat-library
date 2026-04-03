@@ -1,0 +1,5 @@
+New Terminal Output:
+
+root@69c785b1b83d:/app# wget --post-data='{"title": "First Task"}' --header='Content-Type: application/json' -qO- http://127.0.0.1:5000/tasks
+bash: wget: command not found
+root@69c785b1b83d:/app#
