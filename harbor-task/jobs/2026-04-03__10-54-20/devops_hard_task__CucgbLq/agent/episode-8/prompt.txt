@@ -1,0 +1,35 @@
+New Terminal Output:
+
+root@4330de64b04c:/app# cat > /tmp/fix.py << 'EOF'
+> import re
+>
+> with open('app.py', 'r') as f:
+>     content = f.read()
+>
+> # Fix the retry function to properly move job from processed to queue
+> old_retry = '''    for job in processed:
+>         if job["id"] == job_id:
+>             if job["retries"] >= 3:
+>                 return jsonify({"error": "max retries exceeded"}), 400
+>             job["retries"] += 1  # Bug 5: same =+ bug
+>             job["status"] = "queued"
+>             # Bug 6: adds to processed again instead of moving to queue
+>             processed.append(job)
+>             return jsonify(job), 200'''
+>
+> new_retry = '''    for i, job in enumerate(processed):
+>         if job["id"] == job_id:
+>             if job["retries"] >= 3:
+>                 return jsonify({"error": "max retries exceeded"}), 400
+>             job["retries"] += 1
+>             job["status"] = "queued"
+>             # Move job from processed to queue
+>             queue.append(processed.pop(i))
+>             return jsonify(job), 200'''
+>
+> content = content.replace(old_retry, new_retry)
+>
+> with open('app.py', 'w') as f:
+>     f.write(content)
+> EOF
+root@4330de64b04c:/app#
