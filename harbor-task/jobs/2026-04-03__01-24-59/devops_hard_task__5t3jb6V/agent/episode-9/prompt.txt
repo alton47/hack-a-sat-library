@@ -1,0 +1,58 @@
+New Terminal Output:
+
+root@cde0b0232c1a:/app# cat > test_api.py << 'EOF'
+> import requests
+> import json
+>
+> base_url = "http://localhost:5000"
+>
+> # Test 1: Create first task
+> print("Creating first task...")
+> response = requests.post(f"{base_url}/tasks", json={"title": "First Task"})
+> print(f"Status: {response.status_code}")
+> print(f"Response: {response.json()}")
+> task1_id = response.json()["id"]
+>
+> # Test 2: Create second task to verify unique IDs
+> print("\nCreating second task...")
+> response = requests.post(f"{base_url}/tasks", json={"title": "Second Task"})
+> print(f"Status: {response.status_code}")
+> print(f"Response: {response.json()}")
+> task2_id = response.json()["id"]
+>
+> print(f"\nTask IDs: {task1_id}, {task2_id}")
+> print(f"IDs are unique: {task1_id != task2_id}")
+>
+> # Test 3: List all tasks
+> print("\nListing all tasks...")
+> response = requests.get(f"{base_url}/tasks")
+> print(f"Status: {response.status_code}")
+> print(f"Tasks: {response.json()}")
+>
+> # Test 4: Test complete endpoint with non-existent task
+> print("\nTesting complete endpoint with non-existent task...")
+> response = requests.put(f"{base_url}/tasks/999/complete")
+> print(f"Status: {response.status_code}")
+> print(f"Response: {response.json()}")
+> print(f"Correct status code (404): {response.status_code == 404}")
+>
+> # Test 5: Complete existing task
+> print("\nCompleting first task...")
+> response = requests.put(f"{base_url}/tasks/{task1_id}/complete")
+> print(f"Status: {response.status_code}")
+> print(f"Response: {response.json()}")
+>
+> # Test 6: Delete task
+> print("\nDeleting second task...")
+> response = requests.delete(f"{base_url}/tasks/{task2_id}")
+> print(f"Status: {response.status_code}")
+> print(f"Response: {response.json()}")
+>
+> # Test 7: List tasks after deletion
+> print("\nListing tasks after deletion...")
+> response = requests.get(f"{base_url}/tasks")
+> print(f"Status: {response.status_code}")
+> print(f"Tasks: {response.json()}")
+> print(f"Number of tasks after deletion: {len(response.json())}")
+> EOF
+root@cde0b0232c1a:/app#
