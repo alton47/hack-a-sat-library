@@ -1,0 +1,4 @@
+New Terminal Output:
+
+root@4330de64b04c:/app# sed -i 's/j\["payload"\] == status/j["status"] == status/' app.py
+root@4330de64b04c:/app#
