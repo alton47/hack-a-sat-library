@@ -1,0 +1,56 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 4,
+            "passed": 4,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1775169509.521503,
+            "stop": 1775169526.732725
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_unique_incrementing_ids",
+                "status": "passed",
+                "duration": 3.0541779180002777,
+                "start": 1775169514.5514047,
+                "stop": 1775169517.6060724,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_complete_returns_404_when_not_found",
+                "status": "passed",
+                "duration": 3.0339003339995543,
+                "start": 1775169517.6063044,
+                "stop": 1775169520.6420724,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_complete_task_marks_done",
+                "status": "passed",
+                "duration": 3.0171827510002913,
+                "start": 1775169520.6430578,
+                "stop": 1775169523.6610038,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_delete_removes_correct_task",
+                "status": "passed",
+                "duration": 3.0681875020000007,
+                "start": 1775169523.6615324,
+                "stop": 1775169526.731568,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}
