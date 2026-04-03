@@ -20,3 +20,14 @@ Unknown Error in LLM interaction: litellm.RateLimitError: RateLimitError: GroqEx
 
 Trajectory dumped to jobs/2026-04-03__13-35-51/devops_hard_task__aha3WmM/agent/trajectory.json
 Trajectory dumped to jobs/2026-04-03__13-35-51/devops_hard_task__aha3WmM/agent/trajectory.json
+Trajectory dumped to jobs/2026-04-03__13-35-51/devops_hard_task__aha3WmM/agent/trajectory.json
+Trajectory dumped to jobs/2026-04-03__13-35-51/devops_hard_task__aha3WmM/agent/trajectory.json
+Unknown Error in LLM interaction: litellm.RateLimitError: RateLimitError: GroqException - {"error":{"message":"Rate limit reached for model `moonshotai/kimi-k2-instruct-0905` in organization `org_01kn7vgt80e32afn7gra3q5zse` service tier `on_demand` on tokens per day (TPD): Limit 300000, Used 294610, Requested 8724. Please try again in 16m0.191999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+
+Unknown Error in LLM interaction: litellm.RateLimitError: RateLimitError: GroqException - {"error":{"message":"Rate limit reached for model `moonshotai/kimi-k2-instruct-0905` in organization `org_01kn7vgt80e32afn7gra3q5zse` service tier `on_demand` on tokens per day (TPD): Limit 300000, Used 294569, Requested 8724. Please try again in 15m48.383999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+
+Unknown Error in LLM interaction: litellm.RateLimitError: RateLimitError: GroqException - {"error":{"message":"Rate limit reached for model `moonshotai/kimi-k2-instruct-0905` in organization `org_01kn7vgt80e32afn7gra3q5zse` service tier `on_demand` on tokens per day (TPD): Limit 300000, Used 294536, Requested 8863. Please try again in 16m18.912s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+
+Trajectory dumped to jobs/2026-04-03__13-35-51/devops_hard_task__aha3WmM/agent/trajectory.json
+Trial devops_hard_task__aha3WmM failed: litellm.RateLimitError: RateLimitError: GroqException - {"error":{"message":"Rate limit reached for model `moonshotai/kimi-k2-instruct-0905` in organization `org_01kn7vgt80e32afn7gra3q5zse` service tier `on_demand` on tokens per day (TPD): Limit 300000, Used 294536, Requested 8863. Please try again in 16m18.912s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+

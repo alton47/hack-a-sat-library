@@ -379,4 +379,6 @@ def retry_job(job_id):
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 [?2004hroot@1fe1480c30ce:/app# sed -i 's/processed.append(job)/queue.append(job)/' app.py
+[?2004l[?2004hroot@1fe1480c30ce:/app# sed -i 's/processed.append(job)/queue.append(job)/' app.py
+[?2004l[?2004hroot@1fe1480c30ce:/app# sed -i '/queue.append(job)/a\            processed.remove(job)' app.py
 [?2004l[?2004hroot@1fe1480c30ce:/app# 
