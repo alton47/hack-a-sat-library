@@ -1,0 +1,10 @@
+{
+  "analysis": "I found the bug! In the create_task function, there's a typo on line 19: `next_id =+ 1` instead of `next_id += 1`. The current code `next_id =+ 1` is equivalent to `next_id = +1`, which always sets next_id to 1, causing all tasks to have ID 1. I need to fix this typo.",
+  "plan": "I'll fix the bug by changing `next_id =+ 1` to `next_id += 1` on line 19. This will properly increment the next_id counter so each task gets a unique ID.",
+  "commands": [
+    {
+      "keystrokes": "sed -i 's/next_id =+ 1/next_id += 1/' app.py\n",
+      "duration": 0.1
+    }
+  ]
+}
