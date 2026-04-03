@@ -1,0 +1,116 @@
+{
+    "id": "6c189c15-794d-4940-9aa8-ba23122a70eb",
+    "task_name": "devops_hard_task/devops_hard_task",
+    "trial_name": "devops_hard_task__czUpcob",
+    "trial_uri": "file:///Users/faza/Documents/Dev/Broilr/harbor-task/jobs/2026-04-02__23-25-04/devops_hard_task__czUpcob",
+    "task_id": {
+        "path": "devops_hard_task"
+    },
+    "source": null,
+    "task_checksum": "57bb2638d5cc87e16acdaac534c648079fac9064ee225ecfc5058e71ebca3c13",
+    "config": {
+        "task": {
+            "path": "devops_hard_task",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "devops_hard_task__czUpcob",
+        "trials_dir": "jobs/2026-04-02__23-25-04",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "terminus-2",
+            "import_path": null,
+            "model_name": "groq/moonshotai/kimi-k2-instruct-0905",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "c6e5fad1-1641-4e44-8fba-43dc73deed2e"
+    },
+    "agent_info": {
+        "name": "terminus-2",
+        "version": "2.0.0",
+        "model_info": {
+            "name": "moonshotai/kimi-k2-instruct-0905",
+            "provider": "groq"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 18593,
+        "n_cache_tokens": 12288,
+        "n_output_tokens": 1352,
+        "cost_usd": 0.016505,
+        "rollout_details": [],
+        "metadata": {
+            "n_episodes": 10,
+            "api_request_times_msec": [
+                1041.2979125976562,
+                1152.8980731964111,
+                1049.7868061065674,
+                1136.056900024414,
+                1165.3389930725098,
+                6214.476823806763,
+                5460.373878479004,
+                10232.778072357178,
+                1667.1888828277588,
+                9972.776174545288
+            ],
+            "summarization_count": 0
+        }
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-04-02T20:25:08.324981Z",
+    "finished_at": "2026-04-02T20:28:03.818947Z",
+    "environment_setup": {
+        "started_at": "2026-04-02T20:25:08.325732Z",
+        "finished_at": "2026-04-02T20:25:13.904606Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-04-02T20:25:13.904646Z",
+        "finished_at": "2026-04-02T20:26:04.441212Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-04-02T20:26:04.441460Z",
+        "finished_at": "2026-04-02T20:27:11.674948Z"
+    },
+    "verifier": {
+        "started_at": "2026-04-02T20:27:11.675084Z",
+        "finished_at": "2026-04-02T20:27:52.517531Z"
+    }
+}
