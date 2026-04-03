@@ -1,0 +1,10 @@
+{
+  "analysis": "I found the bug! In the `create_task` function, there's a typo on line 18: `next_id =+ 1` instead of `next_id += 1`. The current code `next_id =+ 1` is equivalent to `next_id = +1`, which resets `next_id` to 1 every time instead of incrementing it. This explains why all tasks get the same ID.",
+  "plan": "I need to fix the typo by changing `next_id =+ 1` to `next_id += 1`. This will ensure that each task gets a unique, incrementing ID. After fixing this, I'll start the Flask application to verify it works correctly.",
+  "commands": [
+    {
+      "keystrokes": "sed -i 's/next_id =+ 1/next_id += 1/' app.py\n",
+      "duration": 0.1
+    }
+  ]
+}
