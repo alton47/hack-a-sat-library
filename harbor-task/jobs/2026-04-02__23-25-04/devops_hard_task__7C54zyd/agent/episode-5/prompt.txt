@@ -1,0 +1,17 @@
+New Terminal Output:
+
+root@c6c90001357a:/app# sed -i 's/x.non_existing_method()/x.sum()/' app.py
+root@c6c90001357a:/app#
+
+
+
+
+
+
+
+
+
+
+
+
+
