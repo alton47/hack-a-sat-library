@@ -1,0 +1,4 @@
+New Terminal Output:
+
+    app.run(host="0.0.0.0", port=5000)root@10cc3e71b87b:/app# sed -i 's/next_id =+ 1/next_id += 1/' app.py
+root@10cc3e71b87b:/app#
