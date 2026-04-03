@@ -1,0 +1,5 @@
+New Terminal Output:
+
+^Croot@73216ce092b0:/app# nohup python /app/app.py > app.log 2>&1 &
+[1] 668
+root@73216ce092b0:/app#
