@@ -1,0 +1,6 @@
+New Terminal Output:
+
+root@6b86f6c06e57:/app# curl -X POST http://127.0.0.1:5000/tasks -H "Content-Type: application/json" -d '{"title": "First Task"}'
+127.0.0.1 - - [02/Apr/2026 21:53:13] "POST /tasks HTTP/1.1" 201 -
+{"done":false,"id":1,"title":"First Task"}
+root@6b86f6c06e57:/app#
