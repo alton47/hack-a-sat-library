@@ -1,4 +1,0 @@
-New Terminal Output:
-
-root@73216ce092b0:/app# which wget
-root@73216ce092b0:/app#

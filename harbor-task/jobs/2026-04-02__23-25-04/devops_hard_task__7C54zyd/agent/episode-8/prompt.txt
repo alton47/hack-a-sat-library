@@ -1,6 +1,0 @@
-New Terminal Output:
-
-root@c6c90001357a:/app# python3 app.py
-6
-SUCCESS
-root@c6c90001357a:/app#

@@ -1,7 +1,0 @@
-New Terminal Output:
-
-root@73216ce092b0:/app# sed -n '15,17p' app.py
-    global next_id
-    data = request.get_json()
-    if not data or "title" not in data:
-root@73216ce092b0:/app#

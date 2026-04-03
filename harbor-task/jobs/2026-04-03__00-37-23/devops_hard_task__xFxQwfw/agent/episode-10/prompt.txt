@@ -1,8 +1,0 @@
-New Terminal Output:
-
-root@69c785b1b83d:/app# python3 -c "import requests; import json; result = requests.post('http://127.0.0.1:5000/tasks', json={'title': 'First Task'}); print(res
-ult.text)"
-127.0.0.1 - - [02/Apr/2026 21:40:46] "POST /tasks HTTP/1.1" 201 -
-{"done":false,"id":1,"title":"First Task"}
-
-root@69c785b1b83d:/app#

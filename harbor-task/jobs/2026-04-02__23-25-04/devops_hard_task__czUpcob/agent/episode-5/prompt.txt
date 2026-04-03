@@ -1,9 +1,0 @@
-New Terminal Output:
-
-CMD ["bash"]root@f8e6af7e8e6c:/app# python3 -c "import requests; import numpy; print('Dependencies installed')"
-Dependencies installed
-root@f8e6af7e8e6c:/app#
-
-
-
-

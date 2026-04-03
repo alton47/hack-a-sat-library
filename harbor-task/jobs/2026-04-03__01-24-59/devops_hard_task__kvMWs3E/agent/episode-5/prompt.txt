@@ -1,4 +1,0 @@
-New Terminal Output:
-
-root@126255423aef:/app# sed -i 's/tasks = \[t for t in tasks if t\[\"id\"\] == task_id\]/tasks = [t for t in tasks if t["id"] != task_id]/' app.py
-root@126255423aef:/app#

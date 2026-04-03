@@ -1,216 +1,0 @@
-[?2004hroot@cde0b0232c1a:/app# asciinema rec --stdin /logs/agent/recording.cast
-[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
-[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
-[?2004hroot@cde0b0232c1a:/app# clear
-[?2004l[H[J[3J[?2004hroot@cde0b0232c1a:/app# ls -la
-[?2004ltotal 16
-drwxr-xr-x 1 root root 4096 Apr  2 22:23 .
-drwxr-xr-x 1 root root 4096 Apr  2 22:29 ..
--rw-r--r-- 1 root root 1502 Apr  2 22:22 app.py
--rw-r--r-- 1 root root   30 Apr  2 21:09 requirements.txt
-[?2004hroot@cde0b0232c1a:/app# cat app.py
-[?2004lfrom flask import Flask, jsonify, request
-
-app = Flask(__name__)
-
-tasks = []
-next_id = 1
-
-@app.route("/tasks", methods=["GET"])
-def get_tasks():
-    # Bug 1: returns copy without "done" field populated correctly
-    return jsonify([{"id": t["id"], "title": t["title"], "done": t["done"]} for t in tasks])
-
-@app.route("/tasks", methods=["POST"])
-def create_task():
-    global next_id
-    data = request.get_json()
-    if not data or "title" not in data:
-        return jsonify({"error": "title required"}), 400
-    task = {"id": next_id, "title": data["title"], "done": False}
-    next_id =+ 1  # Bug 2: =+ resets to 1 every time instead of incrementing
-    tasks.append(task)
-    return jsonify(task), 201
-
-@app.route("/tasks/<int:task_id>/complete", methods=["PUT"])
-def complete_task(task_id):
-    for task in tasks:
-        if task["id"] == task_id:
-            task["done"] = True
-            return jsonify(task)
-    # Bug 3: wrong status code — should be 404, returns 200 with error body
-    return jsonify({"error": "not found"}), 200
-
-@app.route("/tasks/<int:task_id>", methods=["DELETE"])
-def delete_task(task_id):
-    global tasks
-    original_len = len(tasks)
-    # Bug 4: filters wrong condition — keeps matching instead of removing
-    tasks = [t for t in tasks if t["id"] == task_id]
-    if len(tasks) == original_len:
-        return jsonify({"error": "not found"}), 404
-    return jsonify({"deleted": task_id}), 200
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
-[?2004hroot@cde0b0232c1a:/app# cp app.py app.py.backup
-[?2004l[?2004hroot@cde0b0232c1a:/app# cat > app.py << 'EOF'
-[?2004l[?2004h> from flask import Flask, jsonify, request
-[?2004l[?2004h> 
-[?2004l[?2004h> app = Flask(__name__)
-[?2004l[?2004h> 
-[?2004l[?2004h> tasks = []
-[?2004l[?2004h> next_id = 1
-[?2004l[?2004h> 
-[?2004l[?2004h> @app.route("/tasks", methods=["GET"])
-[?2004l[?2004h> def get_tasks():
-[?2004l[?2004h>     return jsonify([{"id": t["id"], "title": t["title"], "done": t["done"]} for t in tasks])
-[?2004l[?2004h> 
-[?2004l[?2004h> @app.route("/tasks", methods=["POST"])
-[?2004l[?2004h> def create_task():
-[?2004l[?2004h>     global next_id
-[?2004l[?2004h>     data = request.get_json()
-[?2004l[?2004h>     if not data or "title" not in data:
-[?2004l[?2004h>         return jsonify({"error": "title required"}), 400
-[?2004l[?2004h>     task = {"id": next_id, "title": data["title"], "done": False}
-[?2004l[?2004h>     next_id += 1  # Fixed: proper increment
-[?2004l[?2004h>     tasks.append(task)
-[?2004l[?2004h>     return jsonify(task), 201
-[?2004l[?2004h> 
-[?2004l[?2004h> @app.route("/tasks/<int:task_id>/complete", methods=["PUT"])
-[?2004l[?2004h> def complete_task(task_id):
-[?2004l[?2004h>     for task in tasks:
-[?2004l[?2004h>         if task["id"] == task_id:
-[?2004l[?2004h>             task["done"] = True
-[?2004l[?2004h>             return jsonify(task)
-[?2004l[?2004h>     return jsonify({"error": "not found"}), 404  # Fixed: proper 404 status code
-[?2004l[?2004h> 
-[?2004l[?2004h> @app.route("/tasks/<int:task_id>", methods=["DELETE"])
-[?2004l[?2004h> def delete_task(task_id):
-[?2004l[?2004h>     global tasks
-[?2004l[?2004h>     original_len = len(tasks)
-[?2004l[?2004h>     # Fixed: remove matching task instead of keeping it
-[?2004l[?2004h>     tasks = [t for t in tasks if t["id"] != task_id]
-[?2004l[?2004h>     if len(tasks) == original_len:
-[?2004l[?2004h>         return jsonify({"error": "not found"}), 404
-[?2004l[?2004h>     return jsonify({"deleted": task_id}), 200
-[?2004l[?2004h> 
-[?2004l[?2004h> if __name__ == "__main__":
-[?2004l[?2004h>     app.run(host="0.0.0.0", port=5000)
-[?2004l[?2004h> EOF
-[?2004l[?2004hroot@cde0b0232c1a:/app# python /app/app.py
-[?2004l * Serving Flask app 'app'
- * Debug mode: off
-[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.24.0.2:5000
-[33mPress CTRL+C to quit[0m
-^C[?2004hroot@cde0b0232c1a:/app# python /app/app.py &
-[?2004l[1] 651
-[?2004hroot@cde0b0232c1a:/app#  * Serving Flask app 'app'
- * Debug mode: off
-[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.24.0.2:5000
-[33mPress CTRL+C to quit[0m
-curl -X POST http://localhost:5000/tasks -H "Content-Type: application/json" -d '{"title": "First Task"}'
-[?2004lbash: curl: command not found
-[?2004hroot@cde0b0232c1a:/app# cat > test_api.py << 'EOF'
-[?2004l[?2004h> import requests
-[?2004l[?2004h> import json
-[?2004l[?2004h> 
-[?2004l[?2004h> base_url = "http://localhost:5000"
-[?2004l[?2004h> 
-[?2004l[?2004h> # Test 1: Create first task
-[?2004l[?2004h> print("Creating first task...")
-[?2004l[?2004h> response = requests.post(f"{base_url}/tasks", json={"title": "First Task"})
-[?2004l[?2004h> print(f"Status: {response.status_code}")
-[?2004l[?2004h> print(f"Response: {response.json()}")
-[?2004l[?2004h> task1_id = response.json()["id"]
-[?2004l[?2004h> 
-[?2004l[?2004h> # Test 2: Create second task to verify unique IDs
-[?2004l[?2004h> print("\nCreating second task...")
-[?2004l[?2004h> response = requests.post(f"{base_url}/tasks", json={"title": "Second Task"})
-[?2004l[?2004h> print(f"Status: {response.status_code}")
-[?2004l[?2004h> print(f"Response: {response.json()}")
-[?2004l[?2004h> task2_id = response.json()["id"]
-[?2004l[?2004h> 
-[?2004l[?2004h> print(f"\nTask IDs: {task1_id}, {task2_id}")
-[?2004l[?2004h> print(f"IDs are unique: {task1_id != task2_id}")
-[?2004l[?2004h> 
-[?2004l[?2004h> # Test 3: List all tasks
-[?2004l[?2004h> print("\nListing all tasks...")
-[?2004l[?2004h> response = requests.get(f"{base_url}/tasks")
-[?2004l[?2004h> print(f"Status: {response.status_code}")
-[?2004l[?2004h> print(f"Tasks: {response.json()}")
-[?2004l[?2004h> 
-[?2004l[?2004h> # Test 4: Test complete endpoint with non-existent task
-[?2004l[?2004h> print("\nTesting complete endpoint with non-existent task...")
-[?2004l[?2004h> response = requests.put(f"{base_url}/tasks/999/complete")
-[?2004l[?2004h> print(f"Status: {response.status_code}")
-[?2004l[?2004h> print(f"Response: {response.json()}")
-[?2004l[?2004h> print(f"Correct status code (404): {response.status_code == 404}")
-[?2004l[?2004h> 
-[?2004l[?2004h> # Test 5: Complete existing task
-[?2004l[?2004h> print("\nCompleting first task...")
-[?2004l[?2004h> response = requests.put(f"{base_url}/tasks/{task1_id}/complete")
-[?2004l[?2004h> print(f"Status: {response.status_code}")
-[?2004l[?2004h> print(f"Response: {response.json()}")
-[?2004l[?2004h> 
-[?2004l[?2004h> # Test 6: Delete task
-[?2004l[?2004h> print("\nDeleting second task...")
-[?2004l[?2004h> response = requests.delete(f"{base_url}/tasks/{task2_id}")
-[?2004l[?2004h> print(f"Status: {response.status_code}")
-[?2004l[?2004h> print(f"Response: {response.json()}")
-[?2004l[?2004h> 
-[?2004l[?2004h> # Test 7: List tasks after deletion
-[?2004l[?2004h> print("\nListing tasks after deletion...")
-[?2004l[?2004h> response = requests.get(f"{base_url}/tasks")
-[?2004l[?2004h> print(f"Status: {response.status_code}")
-[?2004l[?2004h> print(f"Tasks: {response.json()}")
-[?2004l[?2004h> print(f"Number of tasks after deletion: {len(response.json())}")
-[?2004l[?2004h> EOF
-[?2004l[?2004hroot@cde0b0232c1a:/app# python test_api.py
-[?2004lCreating first task...
-127.0.0.1 - - [02/Apr/2026 22:30:13] "[35m[1mPOST /tasks HTTP/1.1[0m" 201 -
-Status: 201
-Response: {'done': False, 'id': 1, 'title': 'First Task'}
-
-Creating second task...
-127.0.0.1 - - [02/Apr/2026 22:30:13] "[35m[1mPOST /tasks HTTP/1.1[0m" 201 -
-Status: 201
-Response: {'done': False, 'id': 2, 'title': 'Second Task'}
-
-Task IDs: 1, 2
-IDs are unique: True
-
-Listing all tasks...
-127.0.0.1 - - [02/Apr/2026 22:30:13] "GET /tasks HTTP/1.1" 200 -
-Status: 200
-Tasks: [{'done': False, 'id': 1, 'title': 'First Task'}, {'done': False, 'id': 2, 'title': 'Second Task'}]
-
-Testing complete endpoint with non-existent task...
-127.0.0.1 - - [02/Apr/2026 22:30:13] "[33mPUT /tasks/999/complete HTTP/1.1[0m" 404 -
-Status: 404
-Response: {'error': 'not found'}
-Correct status code (404): True
-
-Completing first task...
-127.0.0.1 - - [02/Apr/2026 22:30:13] "PUT /tasks/1/complete HTTP/1.1" 200 -
-Status: 200
-Response: {'done': True, 'id': 1, 'title': 'First Task'}
-
-Deleting second task...
-127.0.0.1 - - [02/Apr/2026 22:30:13] "DELETE /tasks/2 HTTP/1.1" 200 -
-Status: 200
-Response: {'deleted': 2}
-
-Listing tasks after deletion...
-127.0.0.1 - - [02/Apr/2026 22:30:13] "GET /tasks HTTP/1.1" 200 -
-Status: 200
-Tasks: [{'done': True, 'id': 1, 'title': 'First Task'}]
-Number of tasks after deletion: 1
-[?2004hroot@cde0b0232c1a:/app# kill %1
-[?2004l[?2004hroot@cde0b0232c1a:/app# 

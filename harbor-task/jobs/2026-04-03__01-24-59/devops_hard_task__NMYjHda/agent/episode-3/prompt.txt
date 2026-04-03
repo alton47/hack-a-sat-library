@@ -1,4 +1,0 @@
-New Terminal Output:
-
-root@cdd011673150:/app# cp app.py app.py.backup
-root@cdd011673150:/app#

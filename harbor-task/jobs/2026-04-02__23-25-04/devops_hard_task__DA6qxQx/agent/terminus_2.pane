@@ -1,50 +1,0 @@
-[?2004hroot@5b6563485889:/app# asciinema rec --stdin /logs/agent/recording.cast
-[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
-[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
-[?2004hroot@5b6563485889:/app# clear
-[?2004l[H[J[3J[?2004hroot@5b6563485889:/app# ls -la
-[?2004ltotal 20
-drwxr-xr-x 1 root root 4096 Apr  2 20:21 .
-drwxr-xr-x 1 root root 4096 Apr  2 20:26 ..
--rw-r--r-- 1 root root  114 Apr  2 19:58 Dockerfile
--rw-r--r-- 1 root root  328 Apr  2 20:20 app.py
--rw-r--r-- 1 root root   30 Apr  2 20:10 requirements.txt
-[?2004hroot@5b6563485889:/app# cat requirements.txt
-[?2004lrequests==2.31.0
-numpy==1.26.4[?2004hroot@5b6563485889:/app# cat app.py
-[?2004limport requests
-import numpy as np
-
-def main():
-    x = np.array([1, 2, 3])
-    print(x.non_existing_method())  # broken on purpose
-
-    res = requests.get("https://jsonplaceholder.typicode.com/posts")
-    if res.status_code == 200:
-        print("SUCCESS")
-    else:
-        print("FAIL")
-
-if __name__ == "__main__":
-    main()[?2004hroot@5b6563485889:/app# sed -i 's/x.non_existing_method()/x.sum()/g' app.py
-[?2004l[?2004hroot@5b6563485889:/app# cat app.py
-[?2004limport requests
-import numpy as np
-
-def main():
-    x = np.array([1, 2, 3])
-    print(x.sum())  # broken on purpose
-
-    res = requests.get("https://jsonplaceholder.typicode.com/posts")
-    if res.status_code == 200:
-        print("SUCCESS")
-    else:
-        print("FAIL")
-
-if __name__ == "__main__":
-    main()[?2004hroot@5b6563485889:/app# python3 -c "import requests; import numpy; print('Dependencies available')"
-[?2004lDependencies available
-[?2004hroot@5b6563485889:/app# python3 app.py
-[?2004l6
-SUCCESS
-[?2004hroot@5b6563485889:/app# 

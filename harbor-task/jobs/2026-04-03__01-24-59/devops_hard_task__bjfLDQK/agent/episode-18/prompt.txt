@@ -1,6 +1,0 @@
-New Terminal Output:
-
-root@495bc5c0ec6f:/app# curl -X DELETE http://localhost:5000/tasks/2
-127.0.0.1 - - [02/Apr/2026 22:28:15] "DELETE /tasks/2 HTTP/1.1" 200 -
-{"deleted":2}
-root@495bc5c0ec6f:/app#

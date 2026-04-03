@@ -1,7 +1,0 @@
-New Terminal Output:
-
-root@69c785b1b83d:/app# python3 -c "import requests; result = requests.put('http://127.0.0.1:5000/tasks/1/complete'); print(result.text)"
-127.0.0.1 - - [02/Apr/2026 21:40:56] "PUT /tasks/1/complete HTTP/1.1" 200 -
-{"done":true,"id":1,"title":"First Task"}
-
-root@69c785b1b83d:/app#

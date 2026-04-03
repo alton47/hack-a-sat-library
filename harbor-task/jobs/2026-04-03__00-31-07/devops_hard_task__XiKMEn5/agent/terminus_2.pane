@@ -1,44 +1,0 @@
-[?2004hroot@7b6cb39394c9:/app# asciinema rec --stdin /logs/agent/recording.cast
-[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
-[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
-[?2004hroot@7b6cb39394c9:/app# clear
-[?2004l[H[J[3J[?2004hroot@7b6cb39394c9:/app# ls -la
-[?2004ltotal 16
-drwxr-xr-x 1 root root 4096 Apr  2 21:10 .
-drwxr-xr-x 1 root root 4096 Apr  2 21:32 ..
--rw-r--r-- 1 root root  911 Apr  2 21:07 app.py
--rw-r--r-- 1 root root   30 Apr  2 21:09 requirements.txt
-[?2004hroot@7b6cb39394c9:/app# cat app.py
-[?2004lfrom flask import Flask, jsonify, request
-
-app = Flask(__name__)
-
-# In-memory store
-tasks = []
-next_id = 1
-
-@app.route("/tasks", methods=["GET"])
-def get_tasks():
-    return jsonify(tasks)
-
-@app.route("/tasks", methods=["POST"])
-def create_task():
-    global next_id
-    data = request.get_json()
-    if not data or "title" not in data:
-        return jsonify({"error": "title required"}), 400
-    task = {"id": next_id, "title": data["title"], "done": False}
-    next_id =+ 1  # BUG: should be += 1, this resets id to 1 every time
-    tasks.append(task)
-    return jsonify(task), 201
-
-@app.route("/tasks/<int:task_id>/complete", methods=["PUT"])
-def complete_task(task_id):
-    for task in tasks:
-        if task["id"] == task_id:
-            task["done"] = True
-            return jsonify(task)
-    return jsonify({"error": "not found"}), 404
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)[?2004hroot@7b6cb39394c9:/app# 

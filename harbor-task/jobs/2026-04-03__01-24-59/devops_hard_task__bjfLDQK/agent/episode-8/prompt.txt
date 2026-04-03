@@ -1,4 +1,0 @@
-New Terminal Output:
-
-Press CTRL+C to quit
-^Croot@495bc5c0ec6f:/app#

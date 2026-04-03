@@ -1,327 +1,0 @@
-[?2004hroot@495bc5c0ec6f:/app# asciinema rec --stdin /logs/agent/recording.cast
-[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
-[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
-[?2004hroot@495bc5c0ec6f:/app# clear
-[?2004l[H[J[3J[?2004hroot@495bc5c0ec6f:/app# cat /app/app.py
-[?2004lfrom flask import Flask, jsonify, request
-
-app = Flask(__name__)
-
-tasks = []
-next_id = 1
-
-@app.route("/tasks", methods=["GET"])
-def get_tasks():
-    # Bug 1: returns copy without "done" field populated correctly
-    return jsonify([{"id": t["id"], "title": t["title"], "done": t["done"]} for t in tasks])
-
-@app.route("/tasks", methods=["POST"])
-def create_task():
-    global next_id
-    data = request.get_json()
-    if not data or "title" not in data:
-        return jsonify({"error": "title required"}), 400
-    task = {"id": next_id, "title": data["title"], "done": False}
-    next_id =+ 1  # Bug 2: =+ resets to 1 every time instead of incrementing
-    tasks.append(task)
-    return jsonify(task), 201
-
-@app.route("/tasks/<int:task_id>/complete", methods=["PUT"])
-def complete_task(task_id):
-    for task in tasks:
-        if task["id"] == task_id:
-            task["done"] = True
-            return jsonify(task)
-    # Bug 3: wrong status code — should be 404, returns 200 with error body
-    return jsonify({"error": "not found"}), 200
-
-@app.route("/tasks/<int:task_id>", methods=["DELETE"])
-def delete_task(task_id):
-    global tasks
-    original_len = len(tasks)
-    # Bug 4: filters wrong condition — keeps matching instead of removing
-    tasks = [t for t in tasks if t["id"] == task_id]
-    if len(tasks) == original_len:
-        return jsonify({"error": "not found"}), 404
-    return jsonify({"deleted": task_id}), 200
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
-[?2004hroot@495bc5c0ec6f:/app# cp /app/app.py /app/app.py.backup
-[?2004l[?2004hroot@495bc5c0ec6f:/app# sed -i 's/next_id =+ 1/next_id += 1/' /app/app.py
-[?2004l[?2004hroot@495bc5c0ec6f:/app# sed -i 's/return jsonify({"error": "not found"}), 200/return jsonify({"error": "not found"}), 404/' /app/app.py
-[?2004l[?2004hroot@495bc5c0ec6f:/app# sed -i 's/tasks = \[t for t in tasks if t\["id"\] == task_id\]/tasks = [t for t in tasks if t["id"] != task_id]/' /app/app.py
-[?2004l[?2004hroot@495bc5c0ec6f:/app# cat /app/app.py
-[?2004lfrom flask import Flask, jsonify, request
-
-app = Flask(__name__)
-
-tasks = []
-next_id = 1
-
-@app.route("/tasks", methods=["GET"])
-def get_tasks():
-    # Bug 1: returns copy without "done" field populated correctly
-    return jsonify([{"id": t["id"], "title": t["title"], "done": t["done"]} for t in tasks])
-
-@app.route("/tasks", methods=["POST"])
-def create_task():
-    global next_id
-    data = request.get_json()
-    if not data or "title" not in data:
-        return jsonify({"error": "title required"}), 400
-    task = {"id": next_id, "title": data["title"], "done": False}
-    next_id += 1  # Bug 2: =+ resets to 1 every time instead of incrementing
-    tasks.append(task)
-    return jsonify(task), 201
-
-@app.route("/tasks/<int:task_id>/complete", methods=["PUT"])
-def complete_task(task_id):
-    for task in tasks:
-        if task["id"] == task_id:
-            task["done"] = True
-            return jsonify(task)
-    # Bug 3: wrong status code — should be 404, returns 200 with error body
-    return jsonify({"error": "not found"}), 404
-
-@app.route("/tasks/<int:task_id>", methods=["DELETE"])
-def delete_task(task_id):
-    global tasks
-    original_len = len(tasks)
-    # Bug 4: filters wrong condition — keeps matching instead of removing
-    tasks = [t for t in tasks if t["id"] != task_id]
-    if len(tasks) == original_len:
-        return jsonify({"error": "not found"}), 404
-    return jsonify({"deleted": task_id}), 200
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
-[?2004hroot@495bc5c0ec6f:/app# python /app/app.py
-[?2004l * Serving Flask app 'app'
- * Debug mode: off
-[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.24.0.2:5000
-[33mPress CTRL+C to quit[0m
-^C[?2004hroot@495bc5c0ec6f:/app# python /app/app.py &
-[?2004l[1] 687
-[?2004hroot@495bc5c0ec6f:/app#  * Serving Flask app 'app'
- * Debug mode: off
-[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.24.0.2:5000
-[33mPress CTRL+C to quit[0m
-curl -X POST http://localhost:5000/tasks -H 'Content-Type: application/json' -d '{"title": "First Task"}'
-[?2004lbash: curl: command not found
-[?2004hroot@495bc5c0ec6f:/app# apt-get update && apt-get install -y curl
-[?2004l0% [Working]            Hit:1 http://deb.debian.org/debian trixie InRelease
-0% [Working]0% [Waiting for headers]                        Hit:2 http://deb.debian.org/debian trixie-updates InRelease
-0% [Waiting for headers]0% [Waiting for headers]                        Hit:3 http://deb.debian.org/debian-security trixie-security InRelease
-                        0% [Working]20% [Working]             Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
-Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
-Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
-Reading state information... 0% Reading state information... 0%Reading state information... Done
-The following additional packages will be installed:
-  bash-completion krb5-locales libbrotli1 libcom-err2 libcurl4t64 libgnutls30t64 libgssapi-krb5-2 libidn2-0 libk5crypto3 libkeyutils1 libkrb5-3
-  libkrb5support0 libldap-common libldap2 libnghttp2-14 libnghttp3-9 libp11-kit0 libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db
-  libssh2-1t64 libtasn1-6 libunistring5 publicsuffix
-Suggested packages:
-  gnutls-bin krb5-doc krb5-user libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql
-The following NEW packages will be installed:
-  bash-completion curl krb5-locales libbrotli1 libcom-err2 libcurl4t64 libgnutls30t64 libgssapi-krb5-2 libidn2-0 libk5crypto3 libkeyutils1 libkrb5-3
-  libkrb5support0 libldap-common libldap2 libnghttp2-14 libnghttp3-9 libp11-kit0 libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db
-  libssh2-1t64 libtasn1-6 libunistring5 publicsuffix
-0 upgraded, 27 newly installed, 0 to remove and 0 not upgraded.
-Need to get 5461 kB of archives.
-After this operation, 19.4 MB of additional disk space will be used.
-0% [Working]            Get:1 http://deb.debian.org/debian trixie/main arm64 bash-completion all 1:2.16.0-7 [319 kB]
-0% [1 bash-completion 6840 B/319 kB 2%]                                       5% [Working]            Get:2 http://deb.debian.org/debian trixie/main arm64 krb5-locales all 1.21.3-5 [101 kB]
-5% [2 krb5-locales 0 B/101 kB 0%]                                 8% [Waiting for headers]                        Get:3 http://deb.debian.org/debian trixie/main arm64 libbrotli1 arm64 1.1.0-2+b7 [308 kB]
-8% [3 libbrotli1 0 B/308 kB 0%]8% [3 libbrotli1 17.8 kB/308 kB 6%]                                   13% [Waiting for headers]                         Get:4 http://deb.debian.org/debian trixie/main arm64 libkrb5support0 arm64 1.21.3-5 [32.4 kB]
-13% [4 libkrb5support0 7933 B/32.4 kB 24%]                                          Get:5 http://deb.debian.org/debian trixie/main arm64 libcom-err2 arm64 1.47.2-3+b10 [24.9 kB]
-                                          15% [Waiting for headers]                         Get:6 http://deb.debian.org/debian trixie/main arm64 libk5crypto3 arm64 1.21.3-5 [81.2 kB]
-15% [6 libk5crypto3 0 B/81.2 kB 0%]                                   17% [Waiting for headers]                         Get:7 http://deb.debian.org/debian trixie/main arm64 libkeyutils1 arm64 1.6.3-6 [9716 B]
-                         Get:8 http://deb.debian.org/debian trixie/main arm64 libkrb5-3 arm64 1.21.3-5 [308 kB]
-19% [8 libkrb5-3 69.6 kB/308 kB 23%]                                    23% [Waiting for headers]                         Get:9 http://deb.debian.org/debian trixie/main arm64 libgssapi-krb5-2 arm64 1.21.3-5 [127 kB]
-24% [9 libgssapi-krb5-2 16.4 kB/127 kB 13%]                                           26% [Waiting for headers]                         Get:10 http://deb.debian.org/debian trixie/main arm64 libunistring5 arm64 1.3-2 [453 kB]
-26% [10 libunistring5 0 B/453 kB 0%]26% [10 libunistring5 12.3 kB/453 kB 3%]                                        33% [Waiting for headers]                         Get:11 http://deb.debian.org/debian trixie/main arm64 libidn2-0 arm64 2.3.8-2 [107 kB]
-33% [11 libidn2-0 1368 B/107 kB 1%]                                   36% [Waiting for headers]                         Get:12 http://deb.debian.org/debian trixie/main arm64 libsasl2-modules-db arm64 2.1.28+dfsg1-9 [20.1 kB]
-36% [12 libsasl2-modules-db 613 B/20.1 kB 3%]                                             37% [Waiting for headers]                         Get:13 http://deb.debian.org/debian trixie/main arm64 libsasl2-2 arm64 2.1.28+dfsg1-9 [55.6 kB]
-37% [13 libsasl2-2 18.3 kB/55.6 kB 33%]                                       38% [Waiting for headers]                         Get:14 http://deb.debian.org/debian trixie/main arm64 libldap2 arm64 2.6.10+dfsg-1 [179 kB]
-38% [14 libldap2 0 B/179 kB 0%]                               42% [Waiting for headers]                         Get:15 http://deb.debian.org/debian trixie/main arm64 libnghttp2-14 arm64 1.64.0-1.1 [71.4 kB]
-42% [15 libnghttp2-14 0 B/71.4 kB 0%]                                     43% [Waiting for headers]                         Get:16 http://deb.debian.org/debian trixie/main arm64 libnghttp3-9 arm64 1.8.0-1 [63.2 kB]
-43% [16 libnghttp3-9 611 B/63.2 kB 1%]44% [16 libnghttp3-9 17.0 kB/63.2 kB 27%]                                         45% [Waiting for headers]                         Get:17 http://deb.debian.org/debian trixie/main arm64 libpsl5t64 arm64 0.21.2-1.1+b1 [57.1 kB]
-45% [17 libpsl5t64 2120 B/57.1 kB 4%]                                     47% [Waiting for headers]                         Get:18 http://deb.debian.org/debian trixie/main arm64 libp11-kit0 arm64 0.25.5-3 [409 kB]
-47% [18 libp11-kit0 0 B/409 kB 0%]                                                                                                                  380 kB/s 8s50% [18 libp11-kit0 223 kB/409 kB 55%]                                                                                                              380 kB/s 7s53% [Waiting for headers]                                                                                                                           380 kB/s 7s                                                                                                                                                               Get:19 http://deb.debian.org/debian trixie/main arm64 libtasn1-6 arm64 4.20.0-2 [47.3 kB]
-53% [19 libtasn1-6 6084 B/47.3 kB 13%]                                                                                                              380 kB/s 7s55% [Waiting for headers]                                                                                                                           380 kB/s 7s                                                                                                                                                               Get:20 http://deb.debian.org/debian trixie/main arm64 libgnutls30t64 arm64 3.8.9-3+deb13u2 [1378 kB]
-55% [20 libgnutls30t64 0 B/1378 kB 0%]                                                                                                              380 kB/s 7s55% [20 libgnutls30t64 0 B/1378 kB 0%]                                                                                                              380 kB/s 7s55% [20 libgnutls30t64 1368 B/1378 kB 0%]                                                                                                           380 kB/s 7s55% [20 libgnutls30t64 17.8 kB/1378 kB 1%]                                                                                                          380 kB/s 7s56% [20 libgnutls30t64 56.1 kB/1378 kB 4%]                                                                                                          380 kB/s 6s56% [20 libgnutls30t64 119 kB/1378 kB 9%]                                                                                                           380 kB/s 6s58% [20 libgnutls30t64 202 kB/1378 kB 15%]                                                                                                          380 kB/s 6s59% [20 libgnutls30t64 326 kB/1378 kB 24%]                                                                                                          380 kB/s 6s62% [20 libgnutls30t64 487 kB/1378 kB 35%]                                                                                                          380 kB/s 5s65% [20 libgnutls30t64 710 kB/1378 kB 52%]                                                                                                          380 kB/s 5s70% [20 libgnutls30t64 1012 kB/1378 kB 73%]                                                                                                         242 kB/s 6s74% [20 libgnutls30t64 1341 kB/1378 kB 97%]                                                                                                         242 kB/s 5s76% [Working]                                                                                                                                       242 kB/s 5s                                                                                                                                                               Get:21 http://deb.debian.org/debian trixie/main arm64 librtmp1 arm64 2.4+20151223.gitfa8646d.1-2+b5 [56.8 kB]
-76% [21 librtmp1 614 B/56.8 kB 1%]                                                                                                                  242 kB/s 5s77% [Waiting for headers]                                                                                                                           242 kB/s 5s                                                                                                                                                               Get:22 http://deb.debian.org/debian trixie/main arm64 libssh2-1t64 arm64 1.11.1-1 [235 kB]
-77% [22 libssh2-1t64 16.4 kB/235 kB 7%]                                                                                                             242 kB/s 5s81% [Waiting for headers]                                                                                                                           242 kB/s 4s                                                                                                                                                               Get:23 http://deb.debian.org/debian trixie/main arm64 libcurl4t64 arm64 8.14.1-2+deb13u2 [359 kB]
-81% [23 libcurl4t64 0 B/359 kB 0%]                                                                                                                  242 kB/s 4s83% [23 libcurl4t64 102 kB/359 kB 29%]                                                                                                              242 kB/s 3s87% [Waiting for headers]                                                                                                                           242 kB/s 2s                                                                                                                                                               Get:24 http://deb.debian.org/debian trixie/main arm64 curl arm64 8.14.1-2+deb13u2 [262 kB]
-87% [24 curl 0 B/262 kB 0%]                                                                                                                         242 kB/s 2s92% [Waiting for headers]                                                                                                                           242 kB/s 1s                                                                                                                                                               Get:25 http://deb.debian.org/debian trixie/main arm64 libldap-common all 2.6.10+dfsg-1 [35.1 kB]
-92% [25 libldap-common 1139 B/35.1 kB 3%]                                                                                                           242 kB/s 1s93% [Waiting for headers]                                                                                                                           242 kB/s 1s                                                                                                                                                               Get:26 http://deb.debian.org/debian trixie/main arm64 libsasl2-modules arm64 2.1.28+dfsg1-9 [62.9 kB]
-93% [26 libsasl2-modules 4950 B/62.9 kB 8%]                                                                                                         242 kB/s 1s95% [Waiting for headers]                                                                                                                           242 kB/s 1s                                                                                                                                                               Get:27 http://deb.debian.org/debian trixie/main arm64 publicsuffix all 20250328.1952-0.1 [296 kB]
-95% [27 publicsuffix 1319 B/296 kB 0%]                                                                                                              242 kB/s 1s100% [Working]                                                                                                                                      242 kB/s 0s                                                                                                                                                               Fetched 5461 kB in 15s (365 kB/s)
-debconf: unable to initialize frontend: Dialog
-debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 27.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/aarch64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/aarch64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/aarch64-linux-gnu/perl-base /usr/lib/aarch64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 27.)
-debconf: falling back to frontend: Teletype
-Selecting previously unselected package bash-completion.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6726 files and directories currently installed.)
-Preparing to unpack .../00-bash-completion_1%3a2.16.0-7_all.deb ...
-Unpacking bash-completion (1:2.16.0-7) ...
-Selecting previously unselected package krb5-locales.
-Preparing to unpack .../01-krb5-locales_1.21.3-5_all.deb ...
-Unpacking krb5-locales (1.21.3-5) ...
-Selecting previously unselected package libbrotli1:arm64.
-Preparing to unpack .../02-libbrotli1_1.1.0-2+b7_arm64.deb ...
-Unpacking libbrotli1:arm64 (1.1.0-2+b7) ...
-Selecting previously unselected package libkrb5support0:arm64.
-Preparing to unpack .../03-libkrb5support0_1.21.3-5_arm64.deb ...
-Unpacking libkrb5support0:arm64 (1.21.3-5) ...
-Selecting previously unselected package libcom-err2:arm64.
-Preparing to unpack .../04-libcom-err2_1.47.2-3+b10_arm64.deb ...
-Unpacking libcom-err2:arm64 (1.47.2-3+b10) ...
-Selecting previously unselected package libk5crypto3:arm64.
-Preparing to unpack .../05-libk5crypto3_1.21.3-5_arm64.deb ...
-Unpacking libk5crypto3:arm64 (1.21.3-5) ...
-Selecting previously unselected package libkeyutils1:arm64.
-Preparing to unpack .../06-libkeyutils1_1.6.3-6_arm64.deb ...
-Unpacking libkeyutils1:arm64 (1.6.3-6) ...
-Selecting previously unselected package libkrb5-3:arm64.
-Preparing to unpack .../07-libkrb5-3_1.21.3-5_arm64.deb ...
-Unpacking libkrb5-3:arm64 (1.21.3-5) ...
-Selecting previously unselected package libgssapi-krb5-2:arm64.
-Preparing to unpack .../08-libgssapi-krb5-2_1.21.3-5_arm64.deb ...
-Unpacking libgssapi-krb5-2:arm64 (1.21.3-5) ...
-Selecting previously unselected package libunistring5:arm64.
-Preparing to unpack .../09-libunistring5_1.3-2_arm64.deb ...
-Unpacking libunistring5:arm64 (1.3-2) ...
-Selecting previously unselected package libidn2-0:arm64.
-Preparing to unpack .../10-libidn2-0_2.3.8-2_arm64.deb ...
-Unpacking libidn2-0:arm64 (2.3.8-2) ...
-Selecting previously unselected package libsasl2-modules-db:arm64.
-Preparing to unpack .../11-libsasl2-modules-db_2.1.28+dfsg1-9_arm64.deb ...
-Unpacking libsasl2-modules-db:arm64 (2.1.28+dfsg1-9) ...
-Selecting previously unselected package libsasl2-2:arm64.
-Preparing to unpack .../12-libsasl2-2_2.1.28+dfsg1-9_arm64.deb ...
-Unpacking libsasl2-2:arm64 (2.1.28+dfsg1-9) ...
-Selecting previously unselected package libldap2:arm64.
-Preparing to unpack .../13-libldap2_2.6.10+dfsg-1_arm64.deb ...
-Unpacking libldap2:arm64 (2.6.10+dfsg-1) ...
-Selecting previously unselected package libnghttp2-14:arm64.
-Preparing to unpack .../14-libnghttp2-14_1.64.0-1.1_arm64.deb ...
-Unpacking libnghttp2-14:arm64 (1.64.0-1.1) ...
-Selecting previously unselected package libnghttp3-9:arm64.
-Preparing to unpack .../15-libnghttp3-9_1.8.0-1_arm64.deb ...
-Unpacking libnghttp3-9:arm64 (1.8.0-1) ...
-Selecting previously unselected package libpsl5t64:arm64.
-Preparing to unpack .../16-libpsl5t64_0.21.2-1.1+b1_arm64.deb ...
-Unpacking libpsl5t64:arm64 (0.21.2-1.1+b1) ...
-Selecting previously unselected package libp11-kit0:arm64.
-Preparing to unpack .../17-libp11-kit0_0.25.5-3_arm64.deb ...
-Unpacking libp11-kit0:arm64 (0.25.5-3) ...
-Selecting previously unselected package libtasn1-6:arm64.
-Preparing to unpack .../18-libtasn1-6_4.20.0-2_arm64.deb ...
-Unpacking libtasn1-6:arm64 (4.20.0-2) ...
-Selecting previously unselected package libgnutls30t64:arm64.
-Preparing to unpack .../19-libgnutls30t64_3.8.9-3+deb13u2_arm64.deb ...
-Unpacking libgnutls30t64:arm64 (3.8.9-3+deb13u2) ...
-Selecting previously unselected package librtmp1:arm64.
-Preparing to unpack .../20-librtmp1_2.4+20151223.gitfa8646d.1-2+b5_arm64.deb ...
-Unpacking librtmp1:arm64 (2.4+20151223.gitfa8646d.1-2+b5) ...
-Selecting previously unselected package libssh2-1t64:arm64.
-Preparing to unpack .../21-libssh2-1t64_1.11.1-1_arm64.deb ...
-Unpacking libssh2-1t64:arm64 (1.11.1-1) ...
-Selecting previously unselected package libcurl4t64:arm64.
-Preparing to unpack .../22-libcurl4t64_8.14.1-2+deb13u2_arm64.deb ...
-Unpacking libcurl4t64:arm64 (8.14.1-2+deb13u2) ...
-Selecting previously unselected package curl.
-Preparing to unpack .../23-curl_8.14.1-2+deb13u2_arm64.deb ...
-Unpacking curl (8.14.1-2+deb13u2) ...
-Selecting previously unselected package libldap-common.
-Preparing to unpack .../24-libldap-common_2.6.10+dfsg-1_all.deb ...
-Unpacking libldap-common (2.6.10+dfsg-1) ...
-Selecting previously unselected package libsasl2-modules:arm64.
-Preparing to unpack .../25-libsasl2-modules_2.1.28+dfsg1-9_arm64.deb ...
-Unpacking libsasl2-modules:arm64 (2.1.28+dfsg1-9) ...
-Selecting previously unselected package publicsuffix.
-Preparing to unpack .../26-publicsuffix_20250328.1952-0.1_all.deb ...
-Unpacking publicsuffix (20250328.1952-0.1) ...
-Setting up libkeyutils1:arm64 (1.6.3-6) ...
-Setting up libbrotli1:arm64 (1.1.0-2+b7) ...
-Setting up libsasl2-modules:arm64 (2.1.28+dfsg1-9) ...
-Setting up libnghttp2-14:arm64 (1.64.0-1.1) ...
-Setting up krb5-locales (1.21.3-5) ...
-Setting up libcom-err2:arm64 (1.47.2-3+b10) ...
-Setting up libldap-common (2.6.10+dfsg-1) ...
-Setting up libkrb5support0:arm64 (1.21.3-5) ...
-Setting up libsasl2-modules-db:arm64 (2.1.28+dfsg1-9) ...
-Setting up bash-completion (1:2.16.0-7) ...
-Setting up libp11-kit0:arm64 (0.25.5-3) ...
-Setting up libunistring5:arm64 (1.3-2) ...
-Setting up libk5crypto3:arm64 (1.21.3-5) ...
-Setting up libsasl2-2:arm64 (2.1.28+dfsg1-9) ...
-Setting up libnghttp3-9:arm64 (1.8.0-1) ...
-Setting up libtasn1-6:arm64 (4.20.0-2) ...
-Setting up libkrb5-3:arm64 (1.21.3-5) ...
-Setting up libssh2-1t64:arm64 (1.11.1-1) ...
-Setting up publicsuffix (20250328.1952-0.1) ...
-Setting up libldap2:arm64 (2.6.10+dfsg-1) ...
-Setting up libidn2-0:arm64 (2.3.8-2) ...
-Setting up libgssapi-krb5-2:arm64 (1.21.3-5) ...
-Setting up libgnutls30t64:arm64 (3.8.9-3+deb13u2) ...
-Setting up libpsl5t64:arm64 (0.21.2-1.1+b1) ...
-Setting up librtmp1:arm64 (2.4+20151223.gitfa8646d.1-2+b5) ...
-Setting up libcurl4t64:arm64 (8.14.1-2+deb13u2) ...
-Setting up curl (8.14.1-2+deb13u2) ...
-Processing triggers for libc-bin (2.41-12+deb13u2) ...
-[?2004hroot@495bc5c0ec6f:/app# curl -X POST http://localhost:5000/tasks -H 'Content-Type: application/json' -d '{"title": "First Task"}'
-[?2004l127.0.0.1 - - [02/Apr/2026 22:27:27] "[35m[1mPOST /tasks HTTP/1.1[0m" 201 -
-{"done":false,"id":1,"title":"First Task"}
-[?2004hroot@495bc5c0ec6f:/app# curl -X POST http://localhost:5000/tasks -H 'Content-Type: application/json' -d '{"title": "Second Task"}'
-[?2004l127.0.0.1 - - [02/Apr/2026 22:27:50] "[35m[1mPOST /tasks HTTP/1.1[0m" 201 -
-{"done":false,"id":2,"title":"Second Task"}
-[?2004hroot@495bc5c0ec6f:/app# curl -X GET http://localhost:5000/tasks
-[?2004l127.0.0.1 - - [02/Apr/2026 22:27:54] "GET /tasks HTTP/1.1" 200 -
-[{"done":false,"id":1,"title":"First Task"},{"done":false,"id":2,"title":"Second Task"}]
-[?2004hroot@495bc5c0ec6f:/app# curl -X PUT http://localhost:5000/tasks/999/complete -v
-[?2004l* Host localhost:5000 was resolved.
-* IPv6: ::1
-* IPv4: 127.0.0.1
-*   Trying [::1]:5000...
-* connect to ::1 port 5000 from ::1 port 35954 failed: Connection refused
-*   Trying 127.0.0.1:5000...
-* Connected to localhost (127.0.0.1) port 5000
-* using HTTP/1.x
-> PUT /tasks/999/complete HTTP/1.1
-> Host: localhost:5000
-> User-Agent: curl/8.14.1
-> Accept: */*
-> 
-* Request completely sent off
-127.0.0.1 - - [02/Apr/2026 22:28:00] "[33mPUT /tasks/999/complete HTTP/1.1[0m" 404 -
-< HTTP/1.1 404 NOT FOUND
-< Server: Werkzeug/3.1.8 Python/3.12.13
-< Date: Thu, 02 Apr 2026 22:28:00 GMT
-< Content-Type: application/json
-< Content-Length: 22
-< Connection: close
-< 
-{"error":"not found"}
-* shutting down connection #0
-[?2004hroot@495bc5c0ec6f:/app# curl -X PUT http://localhost:5000/tasks/1/complete
-[?2004l127.0.0.1 - - [02/Apr/2026 22:28:07] "PUT /tasks/1/complete HTTP/1.1" 200 -
-{"done":true,"id":1,"title":"First Task"}
-[?2004hroot@495bc5c0ec6f:/app# curl -X DELETE http://localhost:5000/tasks/2
-[?2004l127.0.0.1 - - [02/Apr/2026 22:28:15] "DELETE /tasks/2 HTTP/1.1" 200 -
-{"deleted":2}
-[?2004hroot@495bc5c0ec6f:/app# curl -X GET http://localhost:5000/tasks
-[?2004l127.0.0.1 - - [02/Apr/2026 22:28:22] "GET /tasks HTTP/1.1" 200 -
-[{"done":true,"id":1,"title":"First Task"}]
-[?2004hroot@495bc5c0ec6f:/app# kill %1
-[?2004l[?2004hroot@495bc5c0ec6f:/app# 

@@ -1,5 +1,0 @@
-New Terminal Output:
-
-root@73216ce092b0:/app# curl -X POST http://localhost:5000/tasks -H "Content-Type: application/json" -d '{"title": "Task 1"}'
-bash: curl: command not found
-root@73216ce092b0:/app#

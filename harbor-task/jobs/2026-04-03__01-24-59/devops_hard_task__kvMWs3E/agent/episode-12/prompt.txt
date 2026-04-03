@@ -1,6 +1,0 @@
-New Terminal Output:
-
-root@126255423aef:/app# python3 -c "import requests; r = requests.post('http://localhost:5000/tasks', json={'title': 'Second Task'}); print(r.status_code, r.jso
-n())"
-201 {'done': False, 'id': 2, 'title': 'Second Task'}
-root@126255423aef:/app#

@@ -1,6 +1,0 @@
-New Terminal Output:
-
-root@495bc5c0ec6f:/app# curl -X GET http://localhost:5000/tasks
-127.0.0.1 - - [02/Apr/2026 22:28:22] "GET /tasks HTTP/1.1" 200 -
-[{"done":true,"id":1,"title":"First Task"}]
-root@495bc5c0ec6f:/app#

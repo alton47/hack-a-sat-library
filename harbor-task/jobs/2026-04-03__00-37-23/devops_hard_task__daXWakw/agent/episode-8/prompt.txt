@@ -1,5 +1,0 @@
-New Terminal Output:
-
-root@1c166c8cf73d:/app# wget --help
-bash: wget: command not found
-root@1c166c8cf73d:/app#

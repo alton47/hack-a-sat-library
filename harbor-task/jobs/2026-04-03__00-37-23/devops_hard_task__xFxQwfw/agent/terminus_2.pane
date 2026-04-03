@@ -1,120 +1,0 @@
-[?2004hroot@69c785b1b83d:/app# asciinema rec --stdin /logs/agent/recording.cast
-[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
-[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
-[?2004hroot@69c785b1b83d:/app# clear
-[?2004l[H[J[3J[?2004hroot@69c785b1b83d:/app# ls -la
-[?2004ltotal 16
-drwxr-xr-x 1 root root 4096 Apr  2 21:10 .
-drwxr-xr-x 1 root root 4096 Apr  2 21:40 ..
--rw-r--r-- 1 root root  911 Apr  2 21:07 app.py
--rw-r--r-- 1 root root   30 Apr  2 21:09 requirements.txt
-[?2004hroot@69c785b1b83d:/app# cat app.py
-[?2004lfrom flask import Flask, jsonify, request
-
-app = Flask(__name__)
-
-# In-memory store
-tasks = []
-next_id = 1
-
-@app.route("/tasks", methods=["GET"])
-def get_tasks():
-    return jsonify(tasks)
-
-@app.route("/tasks", methods=["POST"])
-def create_task():
-    global next_id
-    data = request.get_json()
-    if not data or "title" not in data:
-        return jsonify({"error": "title required"}), 400
-    task = {"id": next_id, "title": data["title"], "done": False}
-    next_id =+ 1  # BUG: should be += 1, this resets id to 1 every time
-    tasks.append(task)
-    return jsonify(task), 201
-
-@app.route("/tasks/<int:task_id>/complete", methods=["PUT"])
-def complete_task(task_id):
-    for task in tasks:
-        if task["id"] == task_id:
-            task["done"] = True
-            return jsonify(task)
-    return jsonify({"error": "not found"}), 404
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)[?2004hroot@69c785b1b83d:/app# sed -i 's/next_id =+ 1/next_id += 1/' app.py
-[?2004l[?2004hroot@69c785b1b83d:/app# cat app.py
-[?2004lfrom flask import Flask, jsonify, request
-
-app = Flask(__name__)
-
-# In-memory store
-tasks = []
-next_id = 1
-
-@app.route("/tasks", methods=["GET"])
-def get_tasks():
-    return jsonify(tasks)
-
-@app.route("/tasks", methods=["POST"])
-def create_task():
-    global next_id
-    data = request.get_json()
-    if not data or "title" not in data:
-        return jsonify({"error": "title required"}), 400
-    task = {"id": next_id, "title": data["title"], "done": False}
-    next_id += 1  # BUG: should be += 1, this resets id to 1 every time
-    tasks.append(task)
-    return jsonify(task), 201
-
-@app.route("/tasks/<int:task_id>/complete", methods=["PUT"])
-def complete_task(task_id):
-    for task in tasks:
-        if task["id"] == task_id:
-            task["done"] = True
-            return jsonify(task)
-    return jsonify({"error": "not found"}), 404
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)[?2004hroot@69c785b1b83d:/app# python /app/app.py
-[?2004l * Serving Flask app 'app'
- * Debug mode: off
-[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.24.0.2:5000
-[33mPress CTRL+C to quit[0m
-^C[?2004hroot@69c785b1b83d:/app# python /app/app.py &
-[?2004l[1] 651
-[?2004hroot@69c785b1b83d:/app#  * Serving Flask app 'app'
- * Debug mode: off
-[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.24.0.2:5000
-[33mPress CTRL+C to quit[0m
-curl -X POST http://127.0.0.1:5000/tasks -H "Content-Type: application/json" -d '{"title": "First Task"}'
-[?2004lbash: curl: command not found
-[?2004hroot@69c785b1b83d:/app# wget --post-data='{"title": "First Task"}' --header='Content-Type: application/json' -qO- http://127.0.0.1:5000/tasks
-[?2004lbash: wget: command not found
-[?2004hroot@69c785b1b83d:/app# python3 -c "import requests; import json; result = requests.post('http://127.0.0.1:5000/tasks', json={'title': 'First Task'}); print(result.text)"
-[?2004l127.0.0.1 - - [02/Apr/2026 21:40:46] "[35m[1mPOST /tasks HTTP/1.1[0m" 201 -
-{"done":false,"id":1,"title":"First Task"}
-
-[?2004hroot@69c785b1b83d:/app# python3 -c "import requests; result = requests.post('http://127.0.0.1:5000/tasks', json={'title': 'Second Task'}); print(result.text)"
-[?2004l127.0.0.1 - - [02/Apr/2026 21:40:49] "[35m[1mPOST /tasks HTTP/1.1[0m" 201 -
-{"done":false,"id":2,"title":"Second Task"}
-
-[?2004hroot@69c785b1b83d:/app# python3 -c "import requests; result = requests.get('http://127.0.0.1:5000/tasks'); print(result.text)"
-[?2004l127.0.0.1 - - [02/Apr/2026 21:40:52] "GET /tasks HTTP/1.1" 200 -
-[{"done":false,"id":1,"title":"First Task"},{"done":false,"id":2,"title":"Second Task"}]
-
-[?2004hroot@69c785b1b83d:/app# python3 -c "import requests; result = requests.put('http://127.0.0.1:5000/tasks/1/complete'); print(result.text)"
-[?2004l127.0.0.1 - - [02/Apr/2026 21:40:56] "PUT /tasks/1/complete HTTP/1.1" 200 -
-{"done":true,"id":1,"title":"First Task"}
-
-[?2004hroot@69c785b1b83d:/app# python3 -c "import requests; result = requests.get('http://127.0.0.1:5000/tasks'); print(result.text)"
-[?2004l127.0.0.1 - - [02/Apr/2026 21:41:03] "GET /tasks HTTP/1.1" 200 -
-[{"done":true,"id":1,"title":"First Task"},{"done":false,"id":2,"title":"Second Task"}]
-
-[?2004hroot@69c785b1b83d:/app# kill %1
-[?2004l[?2004hroot@69c785b1b83d:/app# 

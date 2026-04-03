@@ -1,4 +1,0 @@
-New Terminal Output:
-
-root@cf7c5f7a6403:/app# sed -i 's/return jsonify({"error": "not found"}), 200/return jsonify({"error": "not found"}), 404/' app.py
-root@cf7c5f7a6403:/app#

@@ -1,9 +1,0 @@
-New Terminal Output:
-
-root@1c166c8cf73d:/app# python3 -c "import requests; print('Final verification - GET /tasks'); r = requests.get('http://localhost:5000/tasks'); print(f'Status:
-{r.status_code}, Response: {r.text}')"
-Final verification - GET /tasks
-127.0.0.1 - - [02/Apr/2026 21:38:40] "GET /tasks HTTP/1.1" 200 -
-Status: 200, Response: [{"done":true,"id":1,"title":"First task"},{"done":false,"id":2,"title":"Second task"}]
-
-root@1c166c8cf73d:/app#

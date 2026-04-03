@@ -1,7 +1,0 @@
-New Terminal Output:
-
-root@69c785b1b83d:/app# python3 -c "import requests; result = requests.get('http://127.0.0.1:5000/tasks'); print(result.text)"
-127.0.0.1 - - [02/Apr/2026 21:40:52] "GET /tasks HTTP/1.1" 200 -
-[{"done":false,"id":1,"title":"First Task"},{"done":false,"id":2,"title":"Second Task"}]
-
-root@69c785b1b83d:/app#

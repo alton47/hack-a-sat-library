@@ -1,5 +1,0 @@
-New Terminal Output:
-
-    main()root@c6c90001357a:/app# python3 -c "import numpy; import requests; print('Dependencies available')"
-Dependencies available
-root@c6c90001357a:/app#

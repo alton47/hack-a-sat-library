@@ -1,4 +1,0 @@
-New Terminal Output:
-
-root@e91eed1d6f16:/app# sed -i 's/next_id =+ 1/next_id += 1/' /app/app.py
-root@e91eed1d6f16:/app#
